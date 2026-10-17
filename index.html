@@ -1,0 +1,2856 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Megan Smith | Practice to Product</title>
+<meta name="description" content="Megan Smith, DBA: Product Manager specializing in dental insurance and revenue cycle management. 20+ years in dentistry, from running practices to building their software.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Layout: one wide column; hero splits into identity (left) and a to-scale career timeline (right), stacking on phones. */
+  :root {
+    --bg: #f3f6f6;          /* cool enamel white */
+    --surface: #ffffff;
+    --ink: #13232b;
+    --muted: #4f6169;
+    --line: #d5dfe1;
+    --accent: #0b7171;      /* deep teal */
+    --accent-soft: #d6ecea;
+    --bar-dental: #9fb7bb;
+    --bar-sme: #4f9c97;
+    --bar-pm: #0b7171;
+    --warn: #c8432f;
+    --go: #2e7d32;
+    --warn-soft: #f8e1dc;
+    --sticky: #ddd6fb;
+    --rcm: #0089a8; --hero: #e0652e; --both: #7a5ad6;
+    --tint-blue: #dfe9f6;
+    --tint-purple: #e7e1f6;
+    --tint-warm: #f3e8d8;
+    --sticky-ink: #2a2350;
+
+    --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+    --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1a1f; --surface: #16242a; --ink: #e6eef0; --muted: #9ab0b5; --line: #2a3b42;
+      --accent: #5cc4bb; --accent-soft: #1b3a3a;
+      --bar-dental: #47626a; --bar-sme: #3f8f89; --bar-pm: #5cc4bb;
+      --warn: #e0604c; --warn-soft: #3d2420;
+    --go: #5fbf6f;
+      --go: #5fbf6f;
+      --sticky: #3b3460; --sticky-ink: #ebe7ff;
+    --rcm: #1f9ab5; --hero: #e46d36; --both: #8a6ee0;
+      --rcm: #1f9ab5; --hero: #e46d36; --both: #8a6ee0;
+    --tint-blue: #1d2b3c; --tint-purple: #2a2540; --tint-warm: #2e261c;
+      --tint-blue: #1d2b3c; --tint-purple: #2a2540; --tint-warm: #2e261c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1a1f; --surface: #16242a; --ink: #e6eef0; --muted: #9ab0b5; --line: #2a3b42;
+    --accent: #5cc4bb; --accent-soft: #1b3a3a;
+    --bar-dental: #47626a; --bar-sme: #3f8f89; --bar-pm: #5cc4bb;
+    --warn: #e0604c; --warn-soft: #3d2420;
+    --sticky: #3b3460; --sticky-ink: #ebe7ff;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  /* ---------- Top bar + menu ---------- */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 21;
+    background: var(--surface);
+  }
+  .topbar-actions { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .topbar .wrap { max-width: 1280px; }
+  .top-nav {
+    display: flex;
+    align-self: stretch;
+    margin-block: -14px -1px;   /* run the tabs to the bottom edge of the bar */
+    gap: 4px;
+    margin-right: auto;
+    margin-left: clamp(16px, 3vw, 40px);
+  }
+  .top-nav a {
+    display: flex;
+    align-items: center;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px 12px 0;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+  }
+  .top-nav a:hover { color: var(--accent); border-bottom-color: var(--line); }
+  .nav-drop { position: relative; display: flex; }
+  .nav-drop-btn {
+    display: flex; align-items: center; gap: 6px;
+    font: 500 15px/1 var(--font-body);
+    color: var(--ink);
+    background: none;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    padding: 3px 12px 0;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .nav-drop-btn:hover { color: var(--accent); border-bottom-color: var(--line); }
+  .nav-drop-btn[aria-current="page"] { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+  .nav-drop-btn svg { transition: transform 150ms ease; }
+  .nav-drop-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .nav-drop-panel {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 6px);
+    min-width: 260px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(19, 35, 43, 0.14);
+    padding: 8px;
+    z-index: 30;
+  }
+  .top-nav .nav-drop-panel a {
+    display: block;
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .nav-drop-right { left: auto; right: 0; }
+  .nav-drop-panel a small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; margin-top: 2px; }
+  .top-nav .nav-drop-panel a:hover { background: var(--bg); }
+  .top-nav .nav-drop-panel a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
+  .subnav { display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 0 36px; }
+  .subnav a {
+    font-size: 14px; font-weight: 500;
+    color: var(--ink); text-decoration: none;
+    padding: 7px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+  }
+  .subnav a:hover { border-color: var(--accent); color: var(--accent); }
+  .subnav a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .top-nav a[aria-current="page"] { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+  @media (min-width: 900px) { .menu { display: none; } }
+  @media (max-width: 899px) { .top-nav { display: none; } }
+  @media (max-width: 1239px) {
+    .top-contact span { display: none; }
+    .top-contact { padding: 9px; border: 1px solid var(--line); }
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: start;
+  }
+  .about-main { min-width: 0; }
+  .about-h { margin: 0 0 20px; }
+  .about-main .about-h + .career, .about-main .about-h + .edu { margin-top: 0; }
+  .career { list-style: none; margin: 0 0 48px; padding: 0; display: grid; gap: 36px; }
+  .job {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .job-when {
+    order: -1;
+    margin-bottom: 6px;
+    font: 500 13px/1.4 var(--font-mono);
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .job-body { min-width: 0; }
+  .job-body h4 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 22px; }
+  .job-co { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+  .role { margin-top: 18px; }
+  .role-title { margin: 0 0 8px; font-family: var(--font-body); font-size: 16px; font-weight: 600; color: var(--accent); }
+  .impact { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .impact li { font-size: 16px; line-height: 1.5; text-wrap: pretty; }
+  .impact a { color: var(--accent); font-weight: 500; white-space: nowrap; }
+  .edu { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .edu span { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
+  .life-list { display: grid; gap: clamp(48px, 7vw, 88px); }
+  .life {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+  }
+  .life:nth-child(2) .life-media { order: 2; }
+  .life-media { min-width: 0; }
+  .life-media img {
+    display: block; width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+    border-radius: 18px; box-shadow: 0 10px 28px rgba(19,35,43,.14);
+  }
+  .life-text { min-width: 0; display: grid; gap: clamp(28px, 4vw, 40px); }
+  .life-item h3 {
+    display: flex; align-items: baseline; gap: 12px;
+    font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; margin: 0 0 12px; text-wrap: balance;
+  }
+  .life-emoji { font-size: .9em; }
+  .life-item p { margin: 0; font-size: 18px; line-height: 1.6; max-width: 54ch; text-wrap: pretty; }
+  .life-closer {
+    background: var(--accent-soft);
+    border-radius: 18px;
+    padding: clamp(28px, 4vw, 44px);
+  }
+  .life-closer .life-item p { max-width: 72ch; }
+  @media (max-width: 760px) {
+    .life { grid-template-columns: minmax(0, 1fr); }
+    .life:nth-child(2) .life-media { order: 0; }
+    .life-media img { aspect-ratio: 4 / 3; }
+  }
+  .hobby-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .hobby {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    min-width: 0;
+  }
+  .hobby-icon { color: var(--accent); display: block; margin-bottom: 12px; }
+  .hobby strong { display: block; font-size: 17px; margin-bottom: 6px; }
+  .hobby p { margin: 0; color: var(--muted); font-size: 15px; text-wrap: pretty; }
+  @media (max-width: 980px) { .hobby-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .hobby-grid { grid-template-columns: minmax(0, 1fr); } }
+  .about-facts {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 84px);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .about-facts dl { margin: 0; display: grid; gap: 16px; }
+  .about-facts dt {
+    font: 500 12px/1.2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .about-facts dd { margin: 0; overflow-wrap: anywhere; }
+  @media (max-width: 820px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+  .top-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .top-contact:hover { color: var(--accent); background: var(--bg); }
+  .top-contact svg { flex: none; color: var(--accent); }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .menu { position: relative; }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font: 500 15px/1 var(--font-body);
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 9px 14px 9px 16px;
+    cursor: pointer;
+  }
+  .menu-btn:hover { border-color: var(--accent); }
+  .menu-btn svg { transition: transform 150ms ease; }
+  .menu-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .menu-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: min(300px, calc(100vw - 32px));
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(19, 35, 43, 0.14);
+    padding: 8px;
+  }
+  .menu-group { padding: 6px 0; }
+  .menu-group + .menu-group { border-top: 1px solid var(--line); }
+  .menu-label {
+    font: 500 11px/1 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 10px 6px;
+    margin: 0;
+  }
+  .menu-panel a {
+    display: block;
+    padding: 9px 10px;
+    border-radius: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .menu-panel a small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .menu-panel a:hover { background: var(--bg); }
+  .menu-panel a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
+  .menu-panel a[aria-current="page"] small { color: var(--accent); }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 28px;
+  }
+  .back:hover { text-decoration: underline; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(40px, 7vw, 88px) 56px; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 72px);
+    align-items: center;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(44px, 7.5vw, 84px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .role {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(20px, 2.4vw, 26px);
+    color: var(--muted);
+    margin: 14px 0 0;
+  }
+  .thesis {
+    font-size: clamp(18px, 1.9vw, 21px);
+    max-width: 34ch;
+    margin: 28px 0 0;
+    text-wrap: pretty;
+  }
+  .thesis strong { color: var(--accent); font-weight: 600; }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 8px 8px 16px;
+    font-size: 15px;
+    min-width: 0;
+  }
+  .chip a {
+    color: var(--ink);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  .chip a:hover { color: var(--accent); }
+  .chip .note { color: var(--muted); font-size: 13px; }
+  .copy {
+    font: 500 12px/1 var(--font-mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 0;
+    border-radius: 999px;
+    padding: 7px 10px;
+    cursor: pointer;
+  }
+  .copy:hover { filter: brightness(0.96); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 24px 20px;
+    min-width: 0;
+  }
+  .timeline h2 {
+    font: 500 13px/1.2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+  .rows { display: grid; gap: 18px; }
+  .row-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .row-label span:last-child {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  /* Track = 22 years. Bars end at "now" (right edge). */
+  .track {
+    position: relative;
+    height: 14px;
+    border-radius: 4px;
+    background: var(--bg);
+  }
+  .bar {
+    position: absolute;
+    top: 0; bottom: 0;
+    border-radius: 4px;
+  }
+  .axis {
+    position: relative;
+    height: 18px;
+    margin-top: 14px;
+    border-top: 1px solid var(--line);
+    font: 400 12px/1 var(--font-mono);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .axis span {
+    position: absolute;
+    top: 6px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .axis span:last-child { transform: translateX(-100%); }
+  .legend-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+
+  /* ---------- Focus strip ---------- */
+  .focus {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .focus .wrap {
+    padding-block: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .focus dt {
+    font: 500 12px/1.2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .focus dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .focus dd small {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ---------- RCM map ---------- */
+  .section-head { max-width: 62ch; margin-bottom: 36px; }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .section-head p { margin: 0; color: var(--muted); font-size: 18px; text-wrap: pretty; }
+  /* ---------- Dental RCM lifecycle ---------- */
+  .rcm-life {
+    --blur: 6px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1C1C22;
+    background-color: #F6F5F1;
+    background-image: radial-gradient(#D9D6CE 1.2px, transparent 1.2px);
+    background-size: 24px 24px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .rcm-life-inner {
+    max-width: 1600px; margin: 0 auto;
+    padding-block: clamp(32px, 4vw, 64px);
+    padding-left: max(16px, env(safe-area-inset-left, 0px), 3.5vw);
+    padding-right: max(16px, env(safe-area-inset-right, 0px), 3.5vw);
+    display: flex; flex-direction: column; gap: clamp(32px, 3vw, 44px);
+  }
+  .rcm-head { display: flex; flex-direction: column; gap: 12px; max-width: 920px; }
+  .rcm-eyebrow { font-size: 15px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #C2185B; }
+  .rcm-life h2.rcm-title { margin: 0; font-size: clamp(36px, 4.5vw, 60px); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; text-wrap: balance; }
+  .rcm-sub { margin: 0; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.5; color: #4A4A55; }
+  .rcm-rows { display: flex; flex-direction: column; gap: 36px; }
+  .rcm-row { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .rcm-row::before { content: ""; position: absolute; left: 16.6%; right: 16.6%; top: 22px; border-top: 3px solid #1C1C22; z-index: 0; }
+  .rcm-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .rcm-num {
+    position: relative; z-index: 1; align-self: center;
+    width: 48px; height: 48px; border-radius: 50%; border: none; padding: 0;
+    color: #fff; font: 800 19px/1 'Plus Jakarta Sans', system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 6px #F6F5F1;
+  }
+  button.rcm-num { cursor: pointer; transition: transform .15s ease; }
+  button.rcm-num:hover { transform: scale(1.08); }
+  button.rcm-num:focus-visible { outline: 3px solid #1C1C22; outline-offset: 4px; }
+  .rcm-card {
+    flex: 1; padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 8px;
+    border-top: 6px solid; box-shadow: 0 6px 16px rgba(28,28,34,.08);
+    overflow-wrap: break-word; transition: filter .35s ease, opacity .35s ease;
+  }
+  .rcm-card h3 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 800; color: #1C1C22; }
+  .rcm-card p { margin: 0; font-size: 16px; line-height: 1.45; color: #3F3F49; font-style: italic; }
+  .rcm-card ul { margin: 6px 0 0; padding: 12px 0 0 18px; border-top: 1px solid rgba(28,28,34,.15); display: flex; flex-direction: column; gap: 8px; color: #1C1C22; }
+  .rcm-card li { font-size: 16px; line-height: 1.4; font-weight: 500; padding-left: 2px; }
+  .rcm-card li::marker { color: var(--c, #1C1C22); }
+  .rcm-col.is-hidden .rcm-card { filter: blur(var(--blur)); opacity: .85; user-select: none; }
+  .rcm-hint { margin: 2px 0 0; font-size: 14px; font-weight: 600; color: #C2185B; }
+  .rcm-rows { gap: 28px; }
+  .rcm-early {
+    background: rgba(255,255,255,.6);
+    border: 1px solid rgba(28,28,34,.12);
+    border-radius: 12px;
+  }
+  .rcm-early summary {
+    list-style: none; cursor: pointer;
+    display: flex; align-items: center; gap: 14px;
+    padding: 22px 22px; font-size: 16px; line-height: 1.4; color: #3F3F49;
+  }
+  .rcm-early summary::-webkit-details-marker { display: none; }
+  .rcm-early summary:focus-visible { outline: 3px solid #1C1C22; outline-offset: 2px; border-radius: 12px; }
+  .rcm-early-nums { display: flex; flex: none; margin-right: 6px; }
+  .rcm-early-nums i {
+    width: 34px; height: 34px; border-radius: 50%; margin-right: -8px;
+    color: #fff; font: 800 14px/34px 'Plus Jakarta Sans', system-ui, sans-serif; font-style: normal; text-align: center;
+    box-shadow: 0 0 0 2px #F6F5F1;
+  }
+  .rcm-early-text { flex: 1; min-width: 0; }
+  .rcm-early-text strong { color: #1C1C22; margin-right: 10px; font-size: 18px; }
+  .rcm-early-caret { flex: none; transition: transform .15s ease; }
+  .rcm-early[open] .rcm-early-caret { transform: rotate(180deg); }
+  .rcm-early .rcm-row { padding: 8px 16px 20px; }
+  .rcm-row-compact { gap: 18px; }
+  .rcm-row-compact::before { top: 26px; }
+  .rcm-row-compact .rcm-num { width: 36px; height: 36px; font-size: 15px; }
+  .rcm-row-compact .rcm-card { padding: 14px 16px 16px; }
+  .rcm-row-compact .rcm-card h3 { font-size: 18px; }
+  .rcm-row-compact .rcm-card p, .rcm-row-compact .rcm-card li { font-size: 14px; }
+  .rcm-focus-label {
+    margin: 4px 0 -8px; font-size: 15px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #C2185B;
+  }
+  @media (max-width: 900px) {
+    .rcm-row { grid-template-columns: minmax(0, 1fr); row-gap: 24px; }
+    .rcm-row::before { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    button.rcm-num, .rcm-card { transition: none; }
+  }
+
+  /* ---------- Case study ---------- */
+  .case { padding-block: clamp(32px, 5vw, 56px) clamp(56px, 8vw, 96px); }
+  .before-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: start;
+    margin: 8px 0 56px;
+  }
+  .shot { margin: 0; min-width: 0; }
+  .pinned { position: relative; }
+  .before img { filter: grayscale(0.7); opacity: 0.9; }
+  .pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--surface);
+    background: var(--warn);
+    color: #fff;
+    font: 600 12px/18px var(--font-body);
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    cursor: default;
+    transition: transform 150ms ease;
+    padding: 0;
+  }
+  .pin.active { transform: translate(-50%, -50%) scale(1.3); box-shadow: 0 0 0 5px var(--warn-soft), 0 2px 6px rgba(0,0,0,0.25); }
+  .after-shot { margin-bottom: 40px; }
+  .approach { margin: 0 0 48px; }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px clamp(24px, 3vw, 40px);
+  }
+  .approach-step { border-top: 2px solid var(--line); padding-top: 14px; min-width: 0; }
+  .approach-step:last-child { border-top-color: var(--accent); }
+  .approach-step p { margin: 0; text-wrap: pretty; }
+  .approach-step ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); }
+  .step-label {
+    font: 500 12px/1.2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+  .approach-step:last-child .step-label { color: var(--accent); }
+  .approach-step .step-label-follow { margin-top: 28px; }
+  .discovery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .discovery .note-map { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
+  @media (max-width: 820px) { .discovery .note-map { grid-template-columns: minmax(0, 1fr); } }
+  .sources-head { font-size: 17px; font-weight: 600; margin: 40px 0 12px; }
+  /* approach page: numbered steps */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 0 clamp(16px, 2.5vw, 28px);
+    padding-bottom: clamp(36px, 5vw, 56px);
+  }
+  .step::before {
+    content: "";
+    position: absolute;
+    left: 19px; top: 44px; bottom: 4px;
+    border-left: 2px solid var(--line);
+  }
+  .step:last-child::before { display: none; }
+  .step:last-child { padding-bottom: 8px; }
+  .step-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font: 700 17px/40px var(--font-display);
+    text-align: center;
+  }
+  .step-body { min-width: 0; padding-top: 6px; }
+  .step-body h3 { margin: 0 0 8px; }
+  .step-lede { margin: 0; max-width: 64ch; text-wrap: pretty; }
+  .input-groups {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .group-label {
+    font: 500 12px/1.2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .sources-data { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sources-data .source { background: var(--accent-soft); border-color: transparent; }
+  .step-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: clamp(20px, 3vw, 36px);
+    align-items: start;
+  }
+  .approach-figure { margin: 0; }
+  /* listen + data cycle */
+  .cycle-wrap { margin-top: 24px; max-width: 700px; }
+  .cycle { position: relative; width: 100%; aspect-ratio: 1; }
+  .cycle-ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .cycle-ring circle { fill: none; stroke: var(--accent); stroke-width: .5; stroke-dasharray: 1.4 1.2; opacity: .7; }
+  .cycle-arrows path { fill: none; stroke: var(--accent); stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; }
+  .cycle-center {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 34%; text-align: center;
+  }
+  .cycle-center span {
+    display: block; font: 500 11px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px;
+  }
+  .cycle-center p { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(15px, 1.8vw, 19px); line-height: 1.3; }
+  .cycle-nodes { list-style: none; margin: 0; padding: 0; }
+  .cycle-node {
+    position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%);
+    width: 29%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 4px 14px rgba(19,35,43,.08);
+  }
+  .cycle-data { background: var(--accent-soft); border-color: transparent; }
+  .cycle-node strong { display: block; font-size: 15px; line-height: 1.25; margin-bottom: 4px; }
+  .cycle-node p { margin: 0; font-size: 13px; line-height: 1.4; color: var(--muted); }
+  .cycle-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .cycle-legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .sw { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+  .sw-user { background: var(--surface); border: 1px solid var(--line); }
+  .sw-data { background: var(--accent-soft); }
+  @media (max-width: 760px) {
+    .cycle { aspect-ratio: auto; }
+    .cycle-ring { display: none; }
+    .cycle-center { position: static; transform: none; width: auto; text-align: left; margin-bottom: 16px; }
+    .cycle-nodes { display: grid; gap: 28px; }
+    .cycle-node { position: relative; left: auto; top: auto; transform: none; width: auto; }
+    .cycle-node::after {
+      content: "↓"; position: absolute; left: 50%; bottom: -26px; transform: translateX(-50%);
+      color: var(--accent); font-size: 18px; line-height: 1;
+    }
+    .cycle-node:last-child::after { content: "↻ back to the start"; font-size: 14px; white-space: nowrap; }
+  }
+  /* step illustrations */
+  .step-visual {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 22px;
+    min-width: 0;
+  }
+  .step-visual svg { display: block; width: 100%; height: auto; max-width: 100%; overflow: visible; }
+  .step-visual svg.gauge { max-width: 280px; margin: 4px auto 0; }
+  .g-track, .g-fill { fill: none; stroke-width: 14; stroke-linecap: round; }
+  .g-track { stroke: var(--line); }
+  .g-fill { stroke: var(--accent); }
+  .g-goal { stroke: var(--warn); stroke-width: 3; stroke-linecap: round; }
+  .g-goal-label { fill: var(--warn); font: 600 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+  .g-needle { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+  .g-hub { fill: var(--ink); }
+  .step-visual figcaption { margin-top: 12px; display: grid; gap: 10px; }
+  .v-label { font: 500 12px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .v-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .v-chips span { background: var(--accent-soft); color: var(--accent); font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 999px; }
+  .v-metrics { display: grid; gap: 18px; }
+  .v-metric { display: grid; gap: 6px; }
+  .v-metric-name { font-weight: 600; font-size: 15px; }
+  .v-metric svg { height: 60px; }
+  .m-goal { stroke: var(--warn); stroke-width: 1.5; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke; }
+  .m-area { fill: var(--accent-soft); opacity: .7; }
+  .m-line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .v-metric-keys { display: flex; justify-content: space-between; font: 500 11px/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .v-metric-keys .k-goal { color: var(--warn); }
+  .biz-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .biz-tile {
+    display: grid; gap: 6px; align-content: start;
+    padding: 14px 12px; border-radius: 12px; background: var(--bg); min-width: 0;
+  }
+  .step-visual .biz-tile svg { width: 28px; height: 28px; color: var(--accent); }
+  .step-visual .biz-down svg { color: var(--warn); }
+  .step-visual .biz-star svg { color: #c99a1e; }
+  .biz-tile strong { font-size: 15px; line-height: 1.25; }
+  .biz-tile span { font: 500 11px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  @media (max-width: 420px) { .biz-tiles { grid-template-columns: minmax(0, 1fr); } }
+  .step-lede-more { margin-top: 12px; }
+  .prd-figure { padding: 8px; background: #fff; }
+  .prd-figure img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .prd-path { color: var(--accent); }
+  .prd-main { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
+  .prd-loop { fill: none; stroke: var(--warn); stroke-width: 1.6; stroke-dasharray: 4 4; color: var(--warn); }
+  .prd-loop-label { fill: var(--warn); font: 500 9px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; }
+  .prd-dot { fill: var(--surface); stroke: var(--accent); stroke-width: 2.5; }
+  .prd-label { fill: var(--ink); font: 500 9.5px var(--font-body); }
+  .prd-label, .prd-loop-label, .prd-final { stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; }
+  .prd-arrowhead { fill: none; stroke: var(--warn); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .prd-doc path, .prd-doc line { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .prd-doc .prd-doc-fold { fill: none; }
+  .prd-final { fill: var(--accent); font: 700 12px var(--font-display); }
+  .iters { display: grid; grid-template-columns: minmax(0, 326fr) minmax(0, 224fr); gap: 14px; }
+  .iter { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .iter img { margin-top: auto; }
+  .iter-tag { font: 500 11px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .prompt {
+    margin: 0;
+    background: var(--accent); color: #fff;
+    font-size: 14px; line-height: 1.4;
+    padding: 10px 12px; border-radius: 14px 14px 14px 4px;
+  }
+  .iter img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  @media (max-width: 420px) { .iters { grid-template-columns: minmax(0, 1fr); } }
+  .visual-stack { display: grid; gap: 16px; min-width: 0; }
+  .scale-tag {
+    margin: 0 0 12px; display: inline-block;
+    font: 600 12px/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase;
+    color: var(--ink); background: var(--bg); border: 1px solid var(--line);
+    padding: 7px 10px; border-radius: 999px;
+  }
+  .big-pair {
+    display: grid; grid-template-columns: minmax(0, 161fr) auto minmax(0, 242fr);
+    align-items: end; gap: 10px; text-decoration: none; color: inherit;
+  }
+  .big-shot { display: grid; gap: 8px; min-width: 0; }
+  .big-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  .big-pair:hover img { border-color: var(--accent); }
+  .big-arrow { color: var(--accent); font-size: 20px; padding-bottom: 30%; }
+  .big-link { margin-top: 4px; }
+  .eng-h { margin: 18px 0 8px; font: 600 12px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .eng-list { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+  .eng-list li { text-wrap: pretty; }
+  .eng-timeline { max-width: 100%; }
+  .eng-pre { fill: var(--accent-soft); }
+  .eng-pre-label { fill: var(--accent); font: 600 10px var(--font-body); }
+  .eng-track { stroke: var(--line); stroke-width: 4; stroke-linecap: round; }
+  .eng-ticks line { stroke: var(--accent); stroke-width: 2; stroke-linecap: round; }
+  .eng-kick { fill: var(--accent); stroke: var(--surface); stroke-width: 3; }
+  .eng-flag { fill: none; stroke: var(--go); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+  .eng-phase { fill: var(--ink); font: 600 11px var(--font-body); }
+  .eng-small { fill: var(--muted); font: 500 9px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; }
+  .eng-rel { fill: var(--go); }
+  .eng-chips span { font-size: 13px; }
+  .subpoint { margin-top: 16px; padding-left: 16px; border-left: 3px solid var(--accent-soft); }
+  .subpoint h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .subpoint p { margin: 0; max-width: 64ch; text-wrap: pretty; }
+  .subpoint .subpoint-link { margin-top: 8px; }
+  .analytics-figure img { display: block; width: 100%; height: auto; border-radius: 8px; }
+  .analytics-figure figcaption { margin-top: 10px; }
+  .step-lede a, .subpoint a { color: var(--accent); font-weight: 500; text-decoration: none; }
+  .step-lede a:hover, .subpoint a:hover { text-decoration: underline; }
+  .visual-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; margin-top: 20px; }
+  .visual-pair .dash { margin-top: 0; }
+  .lbl-short { display: none; }
+  /* compact KPI strip when the dashboard sits beside another image */
+  .visual-pair .dash-kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-bottom: 14px; }
+  .visual-pair .dash-kpis > div { padding: 8px 8px; border-top: 0 !important; }
+  .visual-pair .dash-kpis > div + div { border-left: 1px solid var(--line) !important; }
+  .visual-pair .dash-kpis dt { font-size: 11px; white-space: nowrap; }
+  .visual-pair .dash-kpis .lbl-full, .visual-pair .dash-kpis p { display: none; }
+  .visual-pair .dash-kpis .lbl-short { display: inline; }
+  .visual-pair .dash-kpis dd { font-size: 18px; margin: 4px 0 0; }
+  .visual-pair .dash-head p { margin-bottom: 12px; }
+  .visual-pair .d-tick, .visual-pair .d-ga-label { font-size: 16px; }
+  .visual-pair .d-direct { font-size: 18px; }
+  @media (max-width: 900px) { .visual-pair { grid-template-columns: minmax(0, 1fr); } }
+  /* example adoption dashboard */
+  .step .dash, .step .dash-disclaimer { grid-column: 2; }
+  .dash {
+    margin-top: 20px; min-width: 0;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(16px, 2.5vw, 24px);
+  }
+  .dash-head h4 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
+  .dash-head p { margin: 0 0 16px; color: var(--muted); font-size: 14px; max-width: 60ch; }
+  .dash-kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0 0 20px; border: 1px solid var(--line); border-radius: 10px; }
+  .dash-kpis > div { padding: 12px 14px; min-width: 0; }
+  .dash-kpis > div + div { border-left: 1px solid var(--line); }
+  .dash-kpis dt { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .dash-kpis dd { margin: 6px 0 2px; font: 700 28px/1.1 var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .dash-kpis p { margin: 0; font-size: 12px; color: var(--muted); }
+  .sw-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; flex: none; }
+  .sw-line { width: 14px; height: 2px; display: inline-block; vertical-align: middle; }
+  .sw-rcm { background: var(--rcm); } .sw-hero { background: var(--hero); } .sw-both { background: var(--both); } .sw-gray { background: var(--line); }
+  .dash-label { margin: 0 0 8px; font-weight: 600; font-size: 14px; }
+  .dash-label span { font-weight: 400; color: var(--muted); }
+  .reach { display: flex; gap: 2px; height: 22px; }
+  .reach span { border-radius: 4px; min-width: 4px; }
+  .r-rcm { background: var(--rcm); } .r-both { background: var(--both); } .r-hero { background: var(--hero); } .r-none { background: var(--line); }
+  .reach-legend { list-style: none; margin: 8px 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+  .reach-legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .reach-legend b { color: var(--ink); font-family: var(--font-mono); font-weight: 600; }
+  .trend-legend { margin: 0 0 4px; }
+  .trend { position: relative; }
+  .trend svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .d-grid { stroke: var(--line); stroke-width: 1; }
+  .d-tick { fill: var(--muted); font: 11px var(--font-body); }
+  .d-ga { stroke: var(--ink); stroke-width: 1.5; }
+  .d-ga-label { fill: var(--ink); font: 600 11px var(--font-mono); }
+  .d-line { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .d-rcm { stroke: var(--rcm); } .d-hero { stroke: var(--hero); }
+  .d-end { stroke: var(--surface); stroke-width: 2; }
+  .d-rcm-end { fill: var(--rcm); } .d-hero-end { fill: var(--hero); }
+  .d-direct { fill: var(--ink); font: 600 12px var(--font-body); }
+  .d-cross { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+  .d-hit { fill: transparent; cursor: crosshair; }
+  .d-tip {
+    position: absolute; pointer-events: none; z-index: 3;
+    background: var(--ink); color: var(--bg); border-radius: 8px; padding: 8px 10px;
+    font-size: 12px; line-height: 1.5; white-space: nowrap; box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  }
+  .d-tip b { display: block; }
+  .d-tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+  .d-table { margin-top: 10px; font-size: 13px; }
+  .d-table summary { cursor: pointer; color: var(--muted); }
+  .d-table-scroll { overflow-x: auto; }
+  .d-table table { border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+  .d-table th, .d-table td { text-align: right; padding: 4px 14px 4px 0; border-bottom: 1px solid var(--line); }
+  .d-table th:first-child, .d-table td:first-child { text-align: left; }
+  .dash-note { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+  .dash-disclaimer { display: block; margin-top: 10px; }
+  @media (max-width: 820px) {
+    .dash-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .dash-kpis > div + div { border-left: 0; }
+    .dash-kpis > div { border-top: 1px solid var(--line); }
+    .dash-kpis > div:nth-child(-n+2) { border-top: 0; }
+    .dash-kpis > div:nth-child(even) { border-left: 1px solid var(--line); }
+  }
+  .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+  @media (max-width: 980px) {
+    .input-groups, .step-split { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .sources-data { grid-template-columns: minmax(0, 1fr); }
+  }
+  .more-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 20px; font-weight: 500; color: var(--accent); text-decoration: none;
+  }
+  .more-link:hover { text-decoration: underline; }
+  .approach-page .more-link { margin-top: 36px; }
+  .lifecycle-top { padding-block: 24px 0; }
+  .lifecycle-top .back { margin-bottom: 20px; }
+  .sources {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .source {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    min-width: 0;
+  }
+  .source strong { display: block; font-size: 16px; margin-bottom: 4px; }
+  .source p { margin: 0; font-size: 15px; color: var(--muted); text-wrap: pretty; }
+  .discovery h4 { font-size: 17px; font-weight: 600; margin: 0 0 6px; }
+  .discovery > div > p { margin: 0 0 16px; color: var(--muted); text-wrap: pretty; }
+  .note-map { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .note-map li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr);
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+  }
+  .sticky {
+    background: var(--sticky);
+    color: var(--sticky-ink);
+    padding: 8px 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+    line-height: 1.35;
+  }
+  .note-map .arrow { color: var(--muted); text-align: center; }
+  .note-map .feature {
+    font-weight: 500; line-height: 1.35;
+    background: var(--accent-soft); color: var(--ink);
+    padding: 8px 10px; border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  }
+  .note-map li { align-items: stretch; }
+  .note-map .arrow { align-self: center; }
+  @media (max-width: 820px) {
+    .approach-grid, .discovery, .sources { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  .quotes.quotes-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .results { margin: 0 0 clamp(40px, 5vw, 56px); }
+  .results h3 { margin-bottom: 6px; }
+  .results-in-voices { margin: 36px 0 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; }
+  .stat-row > div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; min-width: 0; }
+  .stat-row dt { font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3vw, 36px); line-height: 1.05; color: var(--accent); }
+  .stat-row dd { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+  @media (max-width: 820px) { .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .stat-row, .quotes.quotes-2 { grid-template-columns: minmax(0, 1fr); } }
+  /* manual eligibility illustration */
+  .manual {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px;
+  }
+  .mv {
+    position: relative; min-width: 0;
+    background: var(--bg); border-radius: 10px; padding: 34px 14px 14px;
+    display: grid; gap: 10px; align-content: start;
+  }
+  .mv-num {
+    position: absolute; top: 10px; left: 10px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--warn); color: #fff; font: 600 12px/22px var(--font-body); text-align: center;
+  }
+  .mv-hold { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+  .mv-timer { font: 500 14px/1.2 var(--font-mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+  .mv-tabs { display: flex; flex-wrap: wrap; gap: 4px; }
+  .mv-tabs span {
+    font-size: 11px; padding: 4px 7px; border-radius: 6px 6px 0 0;
+    background: var(--surface); border: 1px solid var(--line); border-bottom: 0; color: var(--muted);
+  }
+  .mv-form, .mv-codes { display: grid; gap: 6px; }
+  .mv-form div, .mv-codes div, .mv-status {
+    display: flex; justify-content: space-between; gap: 8px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 13px;
+  }
+  .mv-form span, .mv-codes span, .mv-status span { color: var(--muted); }
+  .mv-form b, .mv-codes b { font-family: var(--font-mono); font-weight: 500; }
+  .mv-typo { border-color: var(--warn) !important; }
+  .mv-typo b { color: var(--warn); text-decoration: underline wavy var(--warn); text-underline-offset: 3px; }
+  .mv-active { background: var(--accent-soft); color: var(--accent); padding: 0 8px; border-radius: 999px; font-size: 12px; }
+  .mv-codes b { color: var(--warn); font-weight: 700; }
+  .mv-delay { justify-self: start; font-size: 12px; font-weight: 600; color: var(--warn); background: var(--warn-soft); padding: 4px 10px; border-radius: 999px; }
+  @media (max-width: 420px) { .manual { grid-template-columns: minmax(0, 1fr); } }
+  /* SmartCompare collage: overlapping snapshots, just a feel for the screens */
+  .sc-collage { position: relative; width: 100%; max-width: 900px; aspect-ratio: 2.35; margin: 8px auto 0; }
+  .sc-tile {
+    position: absolute; display: block;
+    background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+    box-shadow: 0 10px 26px rgba(19,35,43,.16);
+    transform: rotate(var(--r, 0deg));
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .sc-tile img { display: block; width: 100%; height: auto; }
+  .sc-tile:hover, .sc-tile:focus-visible { z-index: 10 !important; transform: rotate(0deg) scale(1.04); box-shadow: 0 16px 36px rgba(19,35,43,.22); }
+  @media (prefers-reduced-motion: reduce) { .sc-tile { transition: none; } }
+  /* benefit callouts on the Eligibility+ screenshot */
+  .pin-good { background: var(--accent); }
+  .pin-good.active { box-shadow: 0 0 0 5px var(--accent-soft), 0 2px 6px rgba(0,0,0,0.25); }
+  .bubble {
+    position: absolute; z-index: 2;
+    background: var(--accent); color: #fff;
+    font-size: clamp(10px, 1.15vw, 13px); line-height: 1.35;
+    padding: clamp(5px, .8vw, 9px) clamp(7px, 1vw, 11px); border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(19,35,43,.28);
+    transition: transform 150ms ease;
+  }
+  .bubble b { display: block; font-size: 1.08em; margin-bottom: 2px; }
+  .bubble.active { transform: scale(1.04); }
+  .callouts {
+    list-style: none; margin: 16px 0 10px; padding: 0; counter-reset: c;
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+  }
+  .callouts li {
+    counter-increment: c; position: relative; min-width: 0;
+    padding: 12px 14px 12px 46px; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--line);
+    font-size: 15px; line-height: 1.45; color: var(--muted);
+    transition: border-color 150ms ease, background 150ms ease;
+  }
+  .callouts li::before {
+    content: counter(c); position: absolute; left: 12px; top: 12px;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--accent); color: #fff; font: 600 12px/24px var(--font-body); text-align: center;
+  }
+  .callouts li strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
+  .callouts li.active { border-color: var(--accent); background: var(--accent-soft); }
+  @media (max-width: 820px) { .callouts { grid-template-columns: minmax(0, 1fr); } }
+  /* SmartSync step by step */
+  .sync-steps {
+    display: grid; grid-template-columns: minmax(0, 2.2fr) auto minmax(0, 1fr);
+    gap: 14px; align-items: start; margin-bottom: 4px;
+  }
+  .sync-step { min-width: 0; display: grid; gap: 8px; }
+  .sync-step img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  .sync-step-title { margin: 0; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
+  .sync-step-title span {
+    width: 24px; height: 24px; border-radius: 50%; flex: none;
+    background: var(--accent); color: #fff; font: 600 12px/24px var(--font-body); text-align: center;
+  }
+  .sync-step-3 { margin: 4px 0 8px; }
+  .flow-arrow { color: var(--accent); font-size: 26px; font-weight: 600; align-self: center; padding-top: 28px; }
+  .flow-down { display: flex; justify-content: flex-end; padding-right: 13%; color: var(--accent); font-size: 26px; font-weight: 600; line-height: 1; margin: 6px 0; }
+  @media (max-width: 640px) { .flow-down { justify-content: center; padding-right: 0; } }
+  .btn-zoom { position: relative; }
+  .btn-zoom .cursor { position: absolute; width: 13%; left: 72%; top: 56%; filter: drop-shadow(0 2px 3px rgba(0,0,0,.3)); }
+  .click-ring {
+    position: absolute; left: 70%; top: 50%; width: 16%; aspect-ratio: 1; max-width: 100%;
+    border: 2px solid #fff; border-radius: 50%; transform: translate(-50%, -50%); opacity: .8;
+  }
+  @media (max-width: 640px) {
+    .sync-steps { grid-template-columns: minmax(0, 1fr); }
+    .flow-arrow { transform: rotate(90deg); justify-self: center; padding: 0; }
+  }
+  .flow-down-center { justify-content: center; padding-right: 0; }
+  .step4-shot { max-width: 560px; margin-left: auto; }
+  .step4-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+  .sync-hl-text { border-radius: 4px; }
+  /* SmartSync result mockup */
+  .sync-shot img { border: 1px solid var(--line); border-radius: 10px; }
+  .sync-toast {
+    position: absolute; z-index: 2;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #1f7a3a; color: #fff;
+    font-size: clamp(10px, 1.2vw, 14px); font-weight: 500; line-height: 1.2;
+    padding: clamp(5px, .8vw, 9px) clamp(8px, 1.1vw, 14px); border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(19,35,43,.25);
+    white-space: nowrap;
+  }
+  .sync-toast svg { flex: none; color: #8ee0a4; }
+  .sync-hl {
+    position: absolute; z-index: 1;
+    border: 2px solid #2e9e52; border-radius: 6px;
+    background: rgba(46,158,82,.12);
+  }
+  .sync-hl i {
+    position: absolute; left: 50%; top: 0; transform: translate(-50%, -60%);
+    font: 600 clamp(8px, .85vw, 11px)/1 var(--font-body); font-style: normal;
+    color: #fff; background: #2e9e52; padding: 3px 6px; border-radius: 999px; white-space: nowrap;
+  }
+  /* draft placeholders (case study 2) */
+  .ph { background: var(--warn-soft); color: var(--ink); padding: 1px 6px; border-radius: 4px; font-style: normal; }
+  .ph-image {
+    aspect-ratio: 16 / 10; max-width: 100%;
+    display: grid; place-items: center; text-align: center; padding: 16px;
+    border: 2px dashed var(--line); border-radius: 10px;
+    color: var(--muted); font: 500 13px/1.4 var(--font-mono); letter-spacing: .04em;
+  }
+  .ph-image-wide { aspect-ratio: 21 / 9; }
+  /* ---------- What users are saying ---------- */
+  .voices { margin: 0 0 clamp(40px, 5vw, 56px); padding-bottom: clamp(32px, 4vw, 48px); border-bottom: 1px solid var(--line); }
+  .voices h3 { margin-bottom: 6px; }
+  .voices-note { margin: 0 0 24px; font-size: 14px; color: var(--muted); text-wrap: pretty; }
+  .voices blockquote { margin: 0; text-wrap: pretty; }
+  .voices figcaption { margin-top: 12px; font: 500 13px/1.2 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .pull {
+    margin: 0 0 24px;
+    padding: clamp(24px, 3vw, 36px);
+    background: var(--accent-soft);
+    border-radius: 14px;
+  }
+  .pull blockquote {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(21px, 2.3vw, 28px);
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .pull figcaption { color: var(--accent); }
+  .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+  .quote-col { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+  @media (max-width: 820px) { .quotes { grid-template-columns: minmax(0, 1fr); } }
+  .quote {
+    margin: 0;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .quote blockquote { font-size: 17px; line-height: 1.45; }
+  .shot-label {
+    display: inline-block;
+    font: 500 12px/1 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    background: var(--line);
+    color: var(--muted);
+  }
+  .shot-label.after { background: var(--accent-soft); color: var(--accent); }
+  .shot a { display: block; }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+  .shot figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+  .case h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 16px;
+  }
+  .problems { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; counter-reset: p; }
+  .problems li {
+    counter-increment: p;
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 8px 10px;
+    margin-inline: -10px;
+    border-radius: 8px;
+    text-wrap: pretty;
+    transition: background 150ms ease;
+  }
+  .problems li::before {
+    content: counter(p);
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--warn);
+    color: #fff;
+    font: 600 13px/26px var(--font-body);
+    text-align: center;
+  }
+  .problems li.active { background: var(--warn-soft); }
+  .decisions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 48px;
+    margin: 0;
+  }
+  .decision dt { font-weight: 600; font-size: 18px; margin-bottom: 4px; }
+  .decision dd { margin: 0; color: var(--muted); text-wrap: pretty; }
+  .decision .tradeoff {
+    display: block;
+    margin-top: 6px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .decision .tradeoff b {
+    font: 500 11px/1 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  @media (max-width: 820px) {
+    .before-row, .decisions { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pin, .problems li { transition: none; }
+  }
+  /* ---------- Footer ---------- */
+  .site-footer {
+    margin-top: clamp(48px, 7vw, 88px);
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .site-footer .wrap {
+    padding-block: clamp(40px, 6vw, 64px) calc(clamp(40px, 6vw, 64px) + env(safe-area-inset-bottom, 0px));
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+  .footer-name { font-family: var(--font-display); font-weight: 700; font-size: 22px; margin: 0 0 6px; }
+  .footer-tag { margin: 0; color: var(--muted); max-width: 36ch; }
+  .footer-label {
+    font: 500 12px/1.2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .footer-links a { color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .footer-links a:hover { color: var(--accent); text-decoration: underline; }
+  .footer-copy { grid-column: 1 / -1; margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+  @media (max-width: 820px) { .site-footer .wrap { grid-template-columns: minmax(0, 1fr); } }
+  .focus-link { color: inherit; text-decoration: none; display: block; }
+  .focus-cta {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .focus-link:hover .focus-cta { text-decoration: underline; }
+  @media (max-width: 820px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr); }
+    .focus .wrap { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .bar { animation: grow 900ms cubic-bezier(.2,.7,.2,1) both; transform-origin: right; }
+    @keyframes grow { from { transform: scaleX(0.001); } to { transform: scaleX(1); } }
+  }
+</style>
+</head>
+<body>
+<nav class="topbar" aria-label="Site">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#" data-view="home">Megan Smith</a>
+    <div class="top-nav" role="list">
+      <div class="nav-drop" role="listitem" data-pages="approach features launch">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-approach">
+          Product approach
+          <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-drop-panel" id="drop-approach" hidden>
+          <a href="#approach" data-view="approach">Outcome determinations<small>Deciding what needs to change</small></a>
+          <a href="#features" data-view="features">Feature decisions<small>PRD, prototype and engineering</small></a>
+          <a href="#launch" data-view="launch">After release<small>Customer Service, Sales and Marketing</small></a>
+        </div>
+      </div>
+      <div class="nav-drop" role="listitem" data-pages="ai-work ai-product">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-ai">
+          AI
+          <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-drop-panel" id="drop-ai" hidden>
+          <a href="#ai-work" data-view="ai-work">How I use AI in my work<small>Prototyping, agents and everyday tools</small></a>
+          <a href="#ai-product" data-view="ai-product">AI agents in the product<small>From showing data to suggesting next actions</small></a>
+        </div>
+      </div>
+      <a role="listitem" href="#lifecycle" data-view="lifecycle">RCM expertise</a>
+      <div class="nav-drop" role="listitem" data-pages="claims-worklist eligibility">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-cases">
+          Case studies
+          <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-drop-panel" id="drop-cases" hidden>
+          <a href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign<small>From a claims report to a billing workspace</small></a>
+          <a href="#eligibility" data-view="eligibility">Eligibility+<small>Partnership with DentalXChange's EligibilityAI</small></a>
+        </div>
+      </div>
+      <div class="nav-drop" role="listitem" data-pages="about hobbies">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-about">
+          About me
+          <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-drop-panel nav-drop-right" id="drop-about" hidden>
+          <a href="#about" data-view="about">Experience<small>History, impact and education</small></a>
+          <a href="#hobbies" data-view="hobbies">Outside of work<small>Books, chickens, dogs and garden beds</small></a>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+    <a class="top-contact" href="mailto:myemail.megsmith@gmail.com" aria-label="Email myemail.megsmith@gmail.com">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 4l6 5 6-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>myemail.megsmith@gmail.com</span>
+    </a>
+    <a class="top-contact" href="tel:+17193224949" aria-label="Call or text 719-322-4949">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.2 1.8 6.6 5 5.1 6.3a8.6 8.6 0 0 0 4.6 4.6L11 9.4l3.2 1.4-.6 2.7c-.1.5-.6.8-1.1.8C6.5 14 2 9.5 1.7 3.5c0-.5.3-1 .8-1.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>719-322-4949</span>
+    </a>
+    <div class="menu">
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">
+        Menu
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="menu-panel" id="menu-panel" hidden>
+        <div class="menu-group">
+          <p class="menu-label">Overview</p>
+          <a href="#" data-view="home">Home<small>Experience, specialty and contact</small></a>
+          <a href="#about" data-view="about">About me: Experience<small>History, impact and education</small></a>
+          <a href="#hobbies" data-view="hobbies">About me: Outside of work<small>Books, chickens, dogs and garden beds</small></a>
+        </div>
+        <div class="menu-group">
+          <p class="menu-label">How I work</p>
+          <a href="#approach" data-view="approach">Outcome determinations<small>Deciding what needs to change</small></a>
+          <a href="#features" data-view="features">Feature decisions<small>PRD, prototype and engineering</small></a>
+          <a href="#launch" data-view="launch">After release<small>Customer Service, Sales and Marketing</small></a>
+          <a href="#lifecycle" data-view="lifecycle">My RCM expertise<small>All nine phases, end to end</small></a>
+        </div>
+        <div class="menu-group">
+          <p class="menu-label">AI</p>
+          <a href="#ai-work" data-view="ai-work">How I use AI in my work<small>Prototyping, agents and everyday tools</small></a>
+          <a href="#ai-product" data-view="ai-product">AI agents in the product<small>From showing data to suggesting next actions</small></a>
+        </div>
+        <div class="menu-group">
+          <p class="menu-label">Case studies</p>
+          <a href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign<small>From a claims report to a billing workspace</small></a>
+          <a href="#eligibility" data-view="eligibility">Eligibility+<small>Partnership with DentalXChange's EligibilityAI</small></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<div id="view-home" data-page="home">
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Product portfolio</p>
+      <h1>Megan Smith</h1>
+      <p class="role">Product Manager, Dental Insurance &amp; RCM</p>
+      <p class="thesis">
+        I specialize in <strong>dental insurance and revenue cycle management</strong>.
+        Two decades in dentistry taught me where practice revenue leaks: eligibility, claims, denials and patient balances.
+        I build software that closes those gaps.
+      </p>
+
+      <div class="contact">
+        <span class="chip">
+          <a href="mailto:myemail.megsmith@gmail.com" id="email">myemail.megsmith@gmail.com</a>
+          <button class="copy" type="button" data-copy="myemail.megsmith@gmail.com" aria-label="Copy email address">Copy</button>
+        </span>
+        <span class="chip">
+          <a href="tel:+17193224949" id="phone">719-322-4949</a>
+          <span class="note">call or text</span>
+          <button class="copy" type="button" data-copy="719-322-4949" aria-label="Copy phone number">Copy</button>
+        </span>
+      </div>
+    </div>
+
+    <section class="timeline" aria-labelledby="tl-title">
+      <h2 id="tl-title">Career at a glance</h2>
+      <div class="rows">
+        <div>
+          <div class="row-label"><span>Dentistry, all roles</span><span>20+ yrs</span></div>
+          <div class="track"><div class="bar" style="right:0;width:calc(100% / 22 * 20);background:var(--bar-dental)"></div></div>
+        </div>
+        <div>
+          <div class="row-label"><span>Dental SaaS, subject matter expert</span><span>7 yrs</span></div>
+          <div class="track"><div class="bar" style="right:0;width:calc(100% / 22 * 7);background:var(--bar-sme)"></div></div>
+        </div>
+        <div>
+          <div class="row-label"><span>Product Manager</span><span>3 yrs</span></div>
+          <div class="track"><div class="bar" style="right:0;width:calc(100% / 22 * 3);background:var(--bar-pm)"></div></div>
+        </div>
+      </div>
+      <div class="axis" aria-hidden="true">
+        <span style="left:calc(100% - 100% / 22 * 20)">20 yrs ago</span>
+        <span style="left:calc(100% - 100% / 22 * 10)">10</span>
+        <span style="left:calc(100% - 100% / 22 * 5)">5</span>
+        <span style="left:100%">Now</span>
+      </div>
+      <p class="legend-note">A decade in SaaS, including seven years as the dental subject matter expert. For the last three, I've led product while remaining the team's go-to dental expert.</p>
+    </section>
+  </div>
+</header>
+
+<section class="focus" aria-label="What I'm looking for">
+  <dl class="wrap">
+    <div>
+      <dt>Role</dt>
+      <dd><a class="focus-link" href="#approach" data-view="approach">Product Manager<small>Ready to own a product area end to end</small><span class="focus-cta">See my product approach <span aria-hidden="true">→</span></span></a></dd>
+    </div>
+    <div>
+      <dt>Specialty</dt>
+      <dd><a class="focus-link" href="#lifecycle" data-view="lifecycle">Dental insurance &amp; RCM<small>Eligibility, claims, payment posting, denials, A/R</small><span class="focus-cta">See my RCM expertise <span aria-hidden="true">→</span></span></a></dd>
+    </div>
+    <div>
+      <dt>Building with AI</dt>
+      <dd><a class="focus-link" href="#ai-product" data-view="ai-product">AI agents inside the product<small>Taking repetitive RCM work, like eligibility checks and denial follow-up, off the team's plate</small><span class="focus-cta">See how I think about AI <span aria-hidden="true">→</span></span></a></dd>
+    </div>
+  </dl>
+</section>
+</div>
+
+<div id="view-approach" data-page="approach" hidden>
+<section class="case approach-page" aria-labelledby="approach-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">Product approach · Outcomes</p>
+      <h2 id="approach-title">How I decide which outcomes matter</h2>
+      <p>I start with what users tell me, check it against what the data shows, and only then decide what to build and how we'll know it worked.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
+      <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
+      <a role="listitem" href="#launch" data-view="launch">3. After release</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body">
+          <h3>Listen, then look at the data</h3>
+          <p class="step-lede">Not every decision is user-led. What users ask for tells me where the pain is. The data tells me how big it is and who it affects.</p>
+          <div class="cycle-wrap">
+            <div class="cycle">
+              <svg class="cycle-ring" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="35"/>
+                <g class="cycle-arrows"><path d="M -1.6 -1.9 L 1.6 0 L -1.6 1.9" transform="translate(70.57 21.68) rotate(36)"/><path d="M -1.6 -1.9 L 1.6 0 L -1.6 1.9" transform="translate(83.29 60.82) rotate(108)"/><path d="M -1.6 -1.9 L 1.6 0 L -1.6 1.9" transform="translate(50.00 85.00) rotate(180)"/><path d="M -1.6 -1.9 L 1.6 0 L -1.6 1.9" transform="translate(16.71 60.82) rotate(252)"/><path d="M -1.6 -1.9 L 1.6 0 L -1.6 1.9" transform="translate(29.43 21.68) rotate(324)"/></g>
+              </svg>
+              <div class="cycle-center">
+                <span>Always running</span>
+                <p>Users tell me where it hurts. Data tells me how much.</p>
+              </div>
+              <ol class="cycle-nodes">
+            <li class="cycle-node cycle-user" style="--x:50.00%;--y:15.00%">
+              <strong>My SME knowledge</strong>
+              <p>20+ years in dentistry, including seven as the company's dental subject matter expert, told me where claims stall and why.</p>
+            </li>
+            <li class="cycle-node cycle-user" style="--x:83.29%;--y:39.18%">
+              <strong>Customer suggestions</strong>
+              <p>Feature requests and support tickets from practices showed which problems came up again and again.</p>
+            </li>
+            <li class="cycle-node cycle-user" style="--x:70.57%;--y:78.32%">
+              <strong>User interviews</strong>
+              <p>Conversations with billing teams showed how they actually work their claims day to day, including the workarounds.</p>
+            </li>
+            <li class="cycle-node cycle-data" style="--x:29.43%;--y:78.32%">
+              <strong>Salesforce</strong>
+              <p>Account and revenue data show which customers a problem affects and what it's worth to the business.</p>
+            </li>
+            <li class="cycle-node cycle-data" style="--x:16.71%;--y:39.18%">
+              <strong>Product usage metrics</strong>
+              <p>How practices actually use the product: which features get used, and where people get stuck or give up.</p>
+            </li>
+              </ol>
+            </div>
+            <div class="cycle-legend">
+              <span><i class="sw sw-user"></i>Voice of the user</span>
+              <span><i class="sw sw-data"></i>Data</span>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Capture every idea, then organize</h3>
+            <p class="step-lede">Every request, ticket and observation goes on one board so nothing gets lost. Then I group them into focus areas we can build around.</p>
+          </div>
+          <figure class="shot approach-figure">
+            <a href="images/product-approach.png" target="_blank" rel="noopener"><img src="images/product-approach.png" alt="Our product approach: every idea captured, then organized into a clear vision. Step 1, Capture: a pile of sticky notes. Step 2, Organize: six focus areas. Claims: fix rejected claims, bulk close, saved narratives. Billing: running totals, overpayment alerts, fewer clicks. Reports: key metrics, timely filing, saved filters. Payments: bulk deposits, auto-posting, clear allocation. Eligibility: one-click checks, last verified date, verify before submit. Worklists: overdue claims, unverified insurance, accepted treatment plans." loading="lazy"></a>
+            <figcaption>Select the image to view full size.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Select the outcome</h3>
+            <p class="step-lede">Before choosing features, I decide what the most important needle to move is. Then I set a goal. For the claims worklist, the outcomes were faster daily work and acting on claims that used to be lost.</p>
+          </div>
+          <figure class="step-visual" aria-label="A gauge with a needle moving toward a goal marker">
+            <svg class="gauge" viewBox="0 0 240 140" role="img" aria-hidden="true">
+              <path class="g-track" d="M 28.0 118.0 A 92 92 0 0 1 212.0 118.0"/>
+              <path class="g-fill" d="M 28.0 118.0 A 92 92 0 0 1 153.9 32.5"/>
+              <line class="g-goal" x1="185.9" y1="76.2" x2="209.5" y2="61.2"/>
+              <text class="g-goal-label" x="221.3" y="53.7" text-anchor="middle">Goal</text>
+              <line class="g-needle" x1="120" y1="118" x2="145.8" y2="52.9"/>
+              <circle class="g-hub" cx="120" cy="118" r="7"/>
+            </svg>
+            <figcaption>
+              <span class="v-label">The needle to move</span>
+              <span class="v-chips"><span>Faster daily work</span><span>Act on lost claims</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Define the metrics</h3>
+            <p class="step-lede">I decide how we'll measure success before we build, so the results aren't a matter of opinion. For claims, that meant tracking days in batch and time from invoice to submission.</p>
+          </div>
+          <figure class="step-visual" aria-label="Two metrics trending down toward a goal line: days in batch, and time from invoice to submission">
+            <div class="v-metrics">
+              <div class="v-metric">
+                <span class="v-metric-name">Days in batch</span>
+                <svg viewBox="0 0 220 60" preserveAspectRatio="none" aria-hidden="true">
+                  <line class="m-goal" x1="0" y1="44" x2="220" y2="44"/>
+                  <path class="m-area" d="M 4 12 L 40 16 L 76 14 L 112 24 L 148 30 L 184 38 L 216 42 L 216 60 L 4 60 Z"/>
+                  <path class="m-line" d="M 4 12 L 40 16 L 76 14 L 112 24 L 148 30 L 184 38 L 216 42"/>
+                </svg>
+                <span class="v-metric-keys"><span>Baseline</span><span class="k-goal">Goal</span></span>
+              </div>
+              <div class="v-metric">
+                <span class="v-metric-name">Time from invoice to submission</span>
+                <svg viewBox="0 0 220 60" preserveAspectRatio="none" aria-hidden="true">
+                  <line class="m-goal" x1="0" y1="44" x2="220" y2="44"/>
+                  <path class="m-area" d="M 4 8 L 40 12 L 76 20 L 112 18 L 148 28 L 184 34 L 216 40 L 216 60 L 4 60 Z"/>
+                  <path class="m-line" d="M 4 8 L 40 12 L 76 20 L 112 18 L 148 28 L 184 34 L 216 40"/>
+                </svg>
+                <span class="v-metric-keys"><span>Baseline</span><span class="k-goal">Goal</span></span>
+              </div>
+            </div>
+            <figcaption><span class="v-label">Measured against a goal set before we build</span></figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Weigh business needs</h3>
+            <p class="step-lede">The best ideas also move the business forward. I check each one against questions like these:</p>
+            <ul class="biz-questions">
+              <li>Will it increase monthly recurring revenue (MRR) per account?</li>
+              <li>Will it lower attrition caused by known problems?</li>
+              <li>Will it build on areas customers already celebrate?</li>
+            </ul>
+          </div>
+          <figure class="step-visual" aria-label="Three business checks: increase MRR per account, lower attrition, build on what customers celebrate">
+            <div class="biz-tiles">
+              <div class="biz-tile biz-up">
+                <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <strong>MRR per account</strong>
+                <span>Increase</span>
+              </div>
+              <div class="biz-tile biz-down">
+                <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l6 6 4-4 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 17h6v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <strong>Attrition</strong>
+                <span>Lower</span>
+              </div>
+              <div class="biz-tile biz-star">
+                <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <strong>What customers celebrate</strong>
+                <span>Build on</span>
+              </div>
+            </div>
+            <figcaption><span class="v-label">Every idea gets the business check</span></figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+
+    <a class="more-link" href="#features" data-view="features">Next: how I make feature decisions <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-features" data-page="features" hidden>
+<section class="case approach-page" aria-labelledby="features-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">Product approach · Features</p>
+      <h2 id="features-title">How I make feature decisions</h2>
+      <p>Once the outcome is set, I turn it into something the team can build: a clear PRD, a validated prototype, and a close partnership with engineering through release.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
+      <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
+      <a role="listitem" href="#launch" data-view="launch">3. After release</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Build the PRD</h3>
+            <p class="step-lede">A PRD is never a straight path. It takes many iterations, ideas and revisions as we learn something new along the way.</p>
+            <p class="step-lede step-lede-more">The final PRD lists the <strong>expected results</strong>, not how to get there. That leaves UX and Engineering room to find the best solution.</p>
+          </div>
+          <figure class="step-visual prd-figure">
+            <a href="images/prd-path.png" target="_blank" rel="noopener"><img src="images/prd-path.png" alt="Building a PRD is not a straight line: competitor analysis, requirement ideas, UX and engineering discussions, user interviews, internal interviews, and prototypes and proofs of concept, with dashed arrows looping back for new learning and revisions, ending at the final PRD." loading="lazy"></a>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Pictures over pages</h3>
+            <p class="step-lede">I'm a tactile learner and a visual decision maker. I like to build my own prototypes to help define requirements, because knowing how something should work helps me fill in the gaps.</p>
+            <p class="step-lede step-lede-more">From small changes to new pages, I like to see it before I approve or finalize a decision. So I bring my own prototypes to product meetings.</p>
+            <p class="step-lede step-lede-more">Using Claude to prototype makes iterations fast. Decisions no longer have to wait until someone can draw them out in Figma. We can prompt Claude, see the effect a change will have, and move quickly.</p>
+          </div>
+          <div class="visual-stack">
+            <figure class="step-visual iter-figure" aria-label="Small change: two EFT columns replaced by one ERA column, after two prompts to Claude">
+              <p class="scale-tag">Small change · EFT columns → one ERA column</p>
+              <div class="iters">
+                <div class="iter">
+                  <span class="iter-tag">Before</span>
+                  <img src="images/before-eft.png" alt="Worklist columns Carrier, EFT Number, EFT Date and State, with EFT numbers and dates filled in on four rows" loading="lazy">
+                </div>
+                <div class="iter">
+                  <span class="iter-tag">After</span>
+                  <img src="images/iter-2-era.png" alt="Worklist columns Carrier, ERA and State, with blue, green and orange receipt icons and dashed empty states" loading="lazy">
+                </div>
+              </div>
+              <figcaption><span class="v-label">Built by prompting Claude. EFT numbers and dates are sample data.</span></figcaption>
+            </figure>
+            <figure class="step-visual big-figure" aria-label="Big project: the unsubmitted claims report rebuilt as a new worklist page">
+              <p class="scale-tag">Big project · Unsubmitted claims</p>
+              <a class="big-pair" href="#claims-worklist" data-view="claims-worklist">
+                <span class="big-shot"><span class="iter-tag">Before</span><img src="images/claims-before.png" alt="The original claims report" loading="lazy"></span>
+                <span class="big-arrow" aria-hidden="true">→</span>
+                <span class="big-shot"><span class="iter-tag">After</span><img src="images/claims-worklist.png" alt="The new claims worklist page" loading="lazy"></span>
+              </a>
+              <figcaption><a class="more-link big-link" href="#claims-worklist" data-view="claims-worklist">Read the full case study <span aria-hidden="true">→</span></a></figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body step-split">
+          <div>
+            <h3>Partner with engineering</h3>
+            <p class="step-lede">Engineering is a partner from the first idea, not a hand-off at the end.</p>
+            <p class="eng-h">Before we start</p>
+            <ul class="eng-list">
+              <li><strong>Proof of concept.</strong> Developers build a quick, throwaway version to prove the approach works before we commit to it.</li>
+              <li><strong>Backend validation.</strong> They confirm the data, APIs and database can support what the PRD asks for, and flag integration or performance limits early.</li>
+              <li><strong>Project sizing.</strong> They break the work into pieces and estimate the effort, so we can plan releases and set realistic timelines.</li>
+            </ul>
+            <p class="eng-h">During the build</p>
+            <ul class="eng-list">
+              <li><strong>Progress reviews</strong> twice a week, moving to daily as release gets closer.</li>
+              <li><strong>Developer suggestions</strong> and new learnings about what the data can do, or where we can make improvements.</li>
+              <li><strong>Deprioritizing</strong> features or ideas when new code would affect other areas of the product.</li>
+            </ul>
+          </div>
+          <figure class="step-visual eng-figure" aria-label="Project timeline: validation work before kickoff, then progress reviews that move from twice a week to daily as release approaches">
+            <svg class="eng-timeline" viewBox="0 0 400 112" aria-hidden="true">
+              <rect class="eng-pre" x="8" y="50" width="96" height="18" rx="9"/>
+              <text class="eng-pre-label" x="56" y="63" text-anchor="middle">Validate</text>
+              <line class="eng-track" x1="104" y1="59" x2="378" y2="59"/>
+              <g class="eng-ticks"><line x1="118.0" y1="52" x2="118.0" y2="66"/><line x1="145.2" y1="52" x2="145.2" y2="66"/><line x1="167.0" y1="52" x2="167.0" y2="66"/><line x1="184.4" y1="52" x2="184.4" y2="66"/><line x1="198.3" y1="52" x2="198.3" y2="66"/><line x1="209.4" y1="52" x2="209.4" y2="66"/><line x1="218.3" y1="52" x2="218.3" y2="66"/><line x1="225.5" y1="52" x2="225.5" y2="66"/><line x1="232.5" y1="52" x2="232.5" y2="66"/><line x1="239.5" y1="52" x2="239.5" y2="66"/><line x1="246.5" y1="52" x2="246.5" y2="66"/><line x1="253.5" y1="52" x2="253.5" y2="66"/><line x1="260.5" y1="52" x2="260.5" y2="66"/><line x1="267.5" y1="52" x2="267.5" y2="66"/><line x1="274.5" y1="52" x2="274.5" y2="66"/><line x1="281.5" y1="52" x2="281.5" y2="66"/><line x1="288.5" y1="52" x2="288.5" y2="66"/><line x1="295.5" y1="52" x2="295.5" y2="66"/><line x1="302.5" y1="52" x2="302.5" y2="66"/><line x1="309.5" y1="52" x2="309.5" y2="66"/><line x1="316.5" y1="52" x2="316.5" y2="66"/><line x1="323.5" y1="52" x2="323.5" y2="66"/><line x1="330.5" y1="52" x2="330.5" y2="66"/><line x1="337.5" y1="52" x2="337.5" y2="66"/><line x1="344.5" y1="52" x2="344.5" y2="66"/><line x1="351.5" y1="52" x2="351.5" y2="66"/><line x1="358.5" y1="52" x2="358.5" y2="66"/><line x1="365.5" y1="52" x2="365.5" y2="66"/></g>
+              <circle class="eng-kick" cx="104" cy="59" r="6"/>
+              <path class="eng-flag" d="M382 30 V70 M382 31 h14 l-4 6 l4 6 h-14"/>
+              <text class="eng-phase" x="56" y="34" text-anchor="middle">Before we start</text>
+              <text class="eng-phase" x="240" y="34" text-anchor="middle">During the build</text>
+              <text class="eng-small" x="122" y="88">Twice-weekly reviews</text>
+              <text class="eng-small" x="372" y="88" text-anchor="end">Daily</text>
+              <text class="eng-small eng-rel" x="386" y="104" text-anchor="end">Release</text>
+            </svg>
+            <figcaption>
+              <span class="v-label">What comes back from engineering mid-project</span>
+              <span class="v-chips eng-chips"><span>Developer suggestions</span><span>New data learnings</span><span>Deprioritized features</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+
+    <a class="more-link" href="#launch" data-view="launch">Next: how I work after release <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-launch" data-page="launch" hidden>
+<section class="case approach-page" aria-labelledby="launch-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">Product approach · After release</p>
+      <h2 id="launch-title">How I work after release</h2>
+      <p>Shipping isn't the finish line. After release, I work with Customer Service, Sales and Marketing so customers can use what we built, and so what they learn comes back to the product team.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
+      <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
+      <a role="listitem" href="#launch" data-view="launch">3. After release</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body">
+          <h3>Customer Service</h3>
+          <p class="step-lede">I train the support team before release so they can answer questions on day one: what changed, why, and how it works. Training is often ongoing, not a one-time demo.</p>
+          <p class="step-lede step-lede-more">I'm also an active participant in solving support tickets. Partnering closely with Customer Service reps helps me know when a problem is really a problem, keeps me in the loop early, and lets me jump on solutions quickly. It also gives me great sources for client interviews.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body">
+          <h3>Sales</h3>
+          <p class="step-lede">I help Sales understand the problem a release solves and who it's for, so they can talk about the value to practices, not just the features.</p>
+          <p class="step-lede step-lede-more">I also bridge the gap between what Sales hears and what the product does. Practices rarely describe a problem the way we do. One office asks about "claims falling through the cracks," another about "money we never got paid for." I help Sales recognize the different ways clients ask the same question, so they can connect the dots to the right solution.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body">
+          <h3>Marketing</h3>
+          <p class="step-lede">I partner with Marketing on adoption and on how a feature is represented and explained. True to <a href="#features" data-view="features">pictures over pages</a>, I sometimes bring mock logos or draft marketing articles to get the conversation started.</p>
+          <p class="step-lede step-lede-more">My goal is to make sure we never misrepresent what a feature does, while still highlighting the benefits it brings to the practice. I also share the customer stories and feedback that show the impact.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <h3>Measure and close the loop</h3>
+          <p class="step-lede">I track adoption against the metrics we set before building. What customers, support, sales and the data tell us feeds right back into the next round of outcome decisions.</p>
+          <a class="more-link" href="#approach" data-view="approach">Back to the start: outcome determinations <span aria-hidden="true">↻</span></a>
+        </div>
+      </li>
+    </ol>
+
+    <a class="more-link" href="#lifecycle" data-view="lifecycle">Next: my RCM expertise <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-ai-work" data-page="ai-work" hidden>
+<section class="case approach-page" aria-labelledby="ai-work-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">AI · In my work</p>
+      <h2 id="ai-work-title">How I use AI in my work</h2>
+      <p>AI is part of how I work every day, not a side experiment. I use it to see ideas sooner, move faster, and spend my time on the decisions that need a person.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#ai-work" data-view="ai-work">How I use AI in my work</a>
+      <a role="listitem" href="#ai-product" data-view="ai-product">AI agents in the product</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body">
+          <h3>Prototype instead of describe</h3>
+          <p class="step-lede">I use Claude to turn an idea into something people can see and react to, from small changes to whole new pages. Decisions no longer wait until someone can draw them in Figma.</p>
+          <p class="step-lede step-lede-more"><a href="#features" data-view="features">See pictures over pages →</a></p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body">
+          <h3>Everyday tools, custom skills</h3>
+          <p class="step-lede">Claude does the majority of the heavy lifting across the product lifecycle, from PRDs and release notes to market analysis. I've created my own skills for each one, so tasks that used to be manual are now simple and automated.</p>
+          <p class="step-lede step-lede-more">I use ChatGPT to keep my voice and tone consistent. I've used it since January 2023, so it knows how I write. I also use it for quick marketing images, like in-app Pendo guides and social media announcements.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body">
+          <h3>Analytics and tracking</h3>
+          <p class="step-lede">I connected Claude to Pendo and Salesforce. It pulls and tracks how the product is being used and adopted, and updates the metrics every day, so data-informed decisions take minutes, not days.</p>
+          <p class="step-lede step-lede-more"><a href="#approach" data-view="approach">See how data shapes my outcome decisions →</a></p>
+          <div class="visual-pair">
+            <figure class="step-visual analytics-figure">
+              <a href="images/analytics-example.png" target="_blank" rel="noopener"><img src="images/analytics-example.png" alt="Example adoption dashboard: offices entering RCM per week, offices sending batches from RCM, RCM share of batch sends, and Hero batch sends, with weekly trend charts before and after general availability on September 2." loading="lazy"></a>
+            </figure>
+            <div class="dash" aria-labelledby="dash-title">
+              <div class="dash-head">
+                <h4 id="dash-title">Claim batches sent: RCM vs. Hero</h4>
+                <p>How often offices send their claim batch from the RCM Claims page, compared with the legacy All Claims page in Hero.</p>
+              </div>
+              <dl class="dash-kpis">
+                <div><dt><i class="sw-dot sw-gray"></i><span class="lbl-full">US offices (max reach)</span><span class="lbl-short">US offices</span></dt><dd>3,853</dd><p>Pendo "Offices-US only" segment</p></div>
+                <div><dt><i class="sw-dot sw-rcm"></i><span class="lbl-full">Offices sending from RCM</span><span class="lbl-short">RCM offices</span></dt><dd>1,140</dd><p>29.6% of offices · 21,480 sends</p></div>
+                <div><dt><i class="sw-dot sw-hero"></i><span class="lbl-full">Offices sending from Hero</span><span class="lbl-short">Hero offices</span></dt><dd>420</dd><p>10.9% of offices · 9,120 sends</p></div>
+                <div><dt><i class="sw-dot sw-both"></i><span class="lbl-full">Offices sending from both</span><span class="lbl-short">Both</span></dt><dd>95</dd><p>8% of RCM senders still also send from Hero</p></div>
+                <div><dt><span class="lbl-full">RCM share of batch sends</span><span class="lbl-short">RCM share</span></dt><dd>70.2%</dd><p>21,480 of 30,600 batch sends</p></div>
+              </dl>
+
+              <p class="dash-label">Reach across US offices <span>· last 30 days</span></p>
+              <div class="reach" role="img" aria-label="Reach across 3,853 US offices: RCM only 1,045 (27.1%), both 95 (2.5%), Hero only 325 (8.4%), neither 2,388 (62.0%)">
+                <span class="r-rcm" style="flex:1045"></span><span class="r-both" style="flex:95"></span><span class="r-hero" style="flex:325"></span><span class="r-none" style="flex:2388"></span>
+              </div>
+              <ul class="reach-legend">
+                <li><i class="sw-dot sw-rcm"></i>RCM only <b>1,045</b> (27.1%)</li>
+                <li><i class="sw-dot sw-both"></i>Both <b>95</b> (2.5%)</li>
+                <li><i class="sw-dot sw-hero"></i>Hero only <b>325</b> (8.4%)</li>
+                <li><i class="sw-dot sw-gray"></i>Neither <b>2,388</b> (62.0%)</li>
+              </ul>
+
+              <p class="dash-label">Weekly trend <span>· Jul 19 – Oct 4 · batch sends</span></p>
+              <ul class="reach-legend trend-legend">
+                <li><i class="sw-line sw-rcm"></i>RCM: batch sent</li>
+                <li><i class="sw-line sw-hero"></i>Hero: batch sent</li>
+              </ul>
+              <div class="trend" data-series="Jul 19|200|7700;Jul 26|220|7300;Aug 2|250|7500;Aug 9|300|7100;Aug 16|420|6800;Aug 23|600|6200;Aug 30|1100|5400;Sep 6|2600|3900;Sep 13|3900|2900;Sep 20|4700|2300;Sep 27|5300|2000;Oct 4|5600|1900">
+                <svg viewBox="0 0 720 262" role="img" aria-label="Weekly batch sends from July 19 to October 4: Hero falls from 7,700 to 1,900 while RCM rises from 200 to 5,600, crossing after general availability on September 2.">
+                  <line class="d-grid" x1="56" x2="690" y1="236.0" y2="236.0"/><text class="d-tick" x="48" y="240.0" text-anchor="end">0</text><line class="d-grid" x1="56" x2="690" y1="181.5" y2="181.5"/><text class="d-tick" x="48" y="185.5" text-anchor="end">2,500</text><line class="d-grid" x1="56" x2="690" y1="127.0" y2="127.0"/><text class="d-tick" x="48" y="131.0" text-anchor="end">5,000</text><line class="d-grid" x1="56" x2="690" y1="72.5" y2="72.5"/><text class="d-tick" x="48" y="76.5" text-anchor="end">7,500</text><line class="d-grid" x1="56" x2="690" y1="18.0" y2="18.0"/><text class="d-tick" x="48" y="22.0" text-anchor="end">10,000</text>
+                  <line class="d-ga" x1="426.5" x2="426.5" y1="18" y2="236"/>
+                  <text class="d-ga-label" x="431.5" y="28">GA</text>
+                  <path class="d-line d-hero" d="M 56.0 68.1 L 113.6 76.9 L 171.3 72.5 L 228.9 81.2 L 286.5 87.8 L 344.2 100.8 L 401.8 118.3 L 459.5 151.0 L 517.1 172.8 L 574.7 185.9 L 632.4 192.4 L 690.0 194.6"/>
+                  <path class="d-line d-rcm" d="M 56.0 231.6 L 113.6 231.2 L 171.3 230.6 L 228.9 229.5 L 286.5 226.8 L 344.2 222.9 L 401.8 212.0 L 459.5 179.3 L 517.1 151.0 L 574.7 133.5 L 632.4 120.5 L 690.0 113.9"/>
+                  <circle class="d-end d-hero-end" cx="690.0" cy="194.6" r="4.5"/>
+                  <circle class="d-end d-rcm-end" cx="690.0" cy="113.9" r="4.5"/>
+                  <text class="d-direct" x="682.0" y="101.9" text-anchor="end">RCM 5,600</text>
+                  <text class="d-direct" x="682.0" y="214.6" text-anchor="end">Hero 1,900</text>
+                  <text class="d-tick" x="56.0" y="256" text-anchor="middle">Jul 19</text><text class="d-tick" x="113.6" y="256" text-anchor="middle">Jul 26</text><text class="d-tick" x="171.3" y="256" text-anchor="middle">Aug 2</text><text class="d-tick" x="228.9" y="256" text-anchor="middle">Aug 9</text><text class="d-tick" x="286.5" y="256" text-anchor="middle">Aug 16</text><text class="d-tick" x="344.2" y="256" text-anchor="middle">Aug 23</text><text class="d-tick" x="401.8" y="256" text-anchor="middle">Aug 30</text><text class="d-tick" x="459.5" y="256" text-anchor="middle">Sep 6</text><text class="d-tick" x="517.1" y="256" text-anchor="middle">Sep 13</text><text class="d-tick" x="574.7" y="256" text-anchor="middle">Sep 20</text><text class="d-tick" x="632.4" y="256" text-anchor="middle">Sep 27</text><text class="d-tick" x="690.0" y="256" text-anchor="middle">Oct 4</text>
+                  <line class="d-cross" x1="0" x2="0" y1="18" y2="236" visibility="hidden"/>
+                  <g class="d-hits"><rect class="d-hit" data-i="0" x="27.2" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="1" x="84.8" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="2" x="142.5" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="3" x="200.1" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="4" x="257.7" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="5" x="315.4" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="6" x="373.0" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="7" x="430.6" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="8" x="488.3" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="9" x="545.9" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="10" x="603.5" y="18" width="57.6" height="218"/><rect class="d-hit" data-i="11" x="661.2" y="18" width="57.6" height="218"/></g>
+                </svg>
+                <div class="d-tip" hidden></div>
+              </div>
+              <details class="d-table">
+                <summary>Show weekly table</summary>
+                <div class="d-table-scroll"><table><thead><tr><th>Week of</th><th>RCM sends</th><th>Hero sends</th></tr></thead><tbody><tr><td>Jul 19</td><td>200</td><td>7,700</td></tr><tr><td>Jul 26</td><td>220</td><td>7,300</td></tr><tr><td>Aug 2</td><td>250</td><td>7,500</td></tr><tr><td>Aug 9</td><td>300</td><td>7,100</td></tr><tr><td>Aug 16</td><td>420</td><td>6,800</td></tr><tr><td>Aug 23</td><td>600</td><td>6,200</td></tr><tr><td>Aug 30</td><td>1,100</td><td>5,400</td></tr><tr><td>Sep 6</td><td>2,600</td><td>3,900</td></tr><tr><td>Sep 13</td><td>3,900</td><td>2,900</td></tr><tr><td>Sep 20</td><td>4,700</td><td>2,300</td></tr><tr><td>Sep 27</td><td>5,300</td><td>2,000</td></tr><tr><td>Oct 4</td><td>5,600</td><td>1,900</td></tr></tbody></table></div>
+              </details>
+              <p class="dash-note"><b>Sent from RCM</b> = clicks on Send All In Batch on the RCM Claims page. <b>Sent from Hero</b> = clicks on Send All Batched Claims on the legacy All Claims page.</p>
+            </div>
+          </div>
+          <p class="v-label dash-disclaimer">Example only: these are not real numbers, just a sample of the adoption metrics I track.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <h3>Build my own AI agents</h3>
+          <p class="step-lede">I build personal AI agents to take care of parts of my day, like a work dashboard and a reading tracker. Building them myself teaches me what agents are good at, and where they still need a person.</p>
+          <div class="subpoint">
+            <h4>Bridge the gap with engineering</h4>
+            <p>Claude helps me bridge the gap between what developers are saying and what I understand. I grasp technical concepts faster and more thoroughly, so the team spends less time on knowledge sharing and we get to results sooner.</p>
+            <p class="subpoint-link"><a href="#features" data-view="features">See how I partner with engineering →</a></p>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <a class="more-link" href="#ai-product" data-view="ai-product">Next: AI agents in the product <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-ai-product" data-page="ai-product" hidden>
+<section class="case approach-page" aria-labelledby="ai-product-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">AI · In the product</p>
+      <h2 id="ai-product-title">AI agents in the product</h2>
+      <p>I see AI agents moving products from simply presenting data to proactively finding insights and supporting the next action, so practices spend less effort interpreting complex information.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#ai-work" data-view="ai-work">How I use AI in my work</a>
+      <a role="listitem" href="#ai-product" data-view="ai-product">AI agents in the product</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body">
+          <h3>From dashboards to insights</h3>
+          <p class="step-lede">Traditional analytics and dashboards leave the interpreting to the user. AI can layer on top of the data a practice already has to surface insights, spot patterns, and point out what matters.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body">
+          <h3>From insights to next actions</h3>
+          <p class="step-lede">Agents can go a step further: notice a problem, recommend what to do about it, and get the work ready for a person to approve. In RCM, that means taking repetitive work, like eligibility checks and denial follow-up, off the team's plate.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body">
+          <h3>Keep people in control</h3>
+          <p class="step-lede">In healthcare, people should be taking care of people: informing, communicating and keeping it personal. Let AI do the legwork, not make the final call. I design agents to gather, compare and prepare the work, then hand the decision to a person to review and approve. That keeps trust high while the work gets faster.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <h3>Where I'd take it next</h3>
+          <p class="step-lede">I see agents moving from working alongside the team to working ahead of it:</p>
+          <div class="subpoint">
+            <h4>Anticipate, don't just report</h4>
+            <p>Learn the patterns in a practice's own data, so problems surface on their own, before anyone has to go looking for them.</p>
+          </div>
+          <div class="subpoint">
+            <h4>Shorten the path to getting paid</h4>
+            <p>Help money move from the payer to the practice's books faster, with less manual work in between.</p>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <a class="more-link" href="#lifecycle" data-view="lifecycle">Next: my RCM expertise <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-lifecycle" data-page="lifecycle" hidden>
+<div class="wrap lifecycle-top">
+  <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+</div>
+<section class="rcm-life" id="rcm-section" aria-labelledby="rcm-title">
+  <div class="rcm-life-inner">
+    <div class="rcm-head">
+      <div class="rcm-eyebrow">My expertise</div>
+      <h2 class="rcm-title" id="rcm-title">I know dental RCM end to end</h2>
+      <p class="rcm-sub">20+ years across all nine phases, from the first patient contact to the final bank reconciliation.</p>
+      <p class="rcm-hint">Select a number to reveal a phase.</p>
+    </div>
+
+    <div class="rcm-rows">
+      <details class="rcm-early">
+        <summary>
+          <span class="rcm-early-nums" aria-hidden="true"><i style="background:#3F76C4">1</i><i style="background:#17809B">2</i><i style="background:#8A6E00">3</i></span>
+          <span class="rcm-early-text"><strong>Phases 1–3</strong> Patient acquisition, registration &amp; scheduling, coverage &amp; treatment planning</span>
+          <svg class="rcm-early-caret" width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+      <div class="rcm-row rcm-row-compact">
+        <div class="rcm-col is-hidden">
+          <button type="button" class="rcm-num" style="background:#3F76C4" aria-pressed="false" aria-label="Reveal phase 1">1</button>
+          <div class="rcm-card" style="background:#E3EDFB;border-top-color:#5B8FD9;--c:#3F76C4">
+            <h3>Patient Acquisition</h3>
+            <p>Attract new patients and retain existing patients.</p>
+            <ul>
+            <li>Marketing and advertising</li>
+            <li>New patient conversion</li>
+            <li>Existing patient retention</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rcm-col is-hidden">
+          <button type="button" class="rcm-num" style="background:#17809B" aria-pressed="false" aria-label="Reveal phase 2">2</button>
+          <div class="rcm-card" style="background:#D3F0F7;border-top-color:#2BA9C8;--c:#17809B">
+            <h3>Patient Registration &amp; Scheduling</h3>
+            <p>Establish patient records and prepare for care.</p>
+            <ul>
+            <li>Patient registration and demographic information</li>
+            <li>Appointment scheduling</li>
+            <li>Insurance information collection</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rcm-col is-hidden">
+          <button type="button" class="rcm-num" style="background:#8A6E00" aria-pressed="false" aria-label="Reveal phase 3">3</button>
+          <div class="rcm-card" style="background:#FCF3C2;border-top-color:#D9B21C;--c:#8A6E00">
+            <h3>Coverage &amp; Treatment Planning</h3>
+            <p>Determine insurance coverage and expected financial responsibility.</p>
+            <ul>
+            <li>Eligibility and benefits verification</li>
+            <li>Treatment estimates and patient financial responsibility</li>
+            <li>Predeterminations and prior authorizations, when applicable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </details>
+
+      <p class="rcm-focus-label">Where claims are won or lost</p>
+      <div class="rcm-row">
+        <div class="rcm-col">
+          <div class="rcm-num" style="background:#B5561A">4</div>
+          <div class="rcm-card" style="background:#FDE2D0;border-top-color:#E07A3A;--c:#B5561A">
+            <h3>Treatment &amp; Charge Capture</h3>
+            <p>Deliver care and accurately record services and charges.</p>
+            <ul>
+            <li>Clinical documentation</li>
+            <li>Procedure code entry</li>
+            <li>Fee application and charge posting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rcm-col">
+          <div class="rcm-num" style="background:#B8413B">5</div>
+          <div class="rcm-card" style="background:#FBDAD8;border-top-color:#E0605A;--c:#B8413B">
+            <h3>Claim Preparation &amp; Submission</h3>
+            <p>Prepare and submit accurate, complete insurance claims.</p>
+            <ul>
+            <li>Claim creation and validation</li>
+            <li>Required attachments and supporting documentation</li>
+            <li>Identify and correct claim errors before submission</li>
+            <li>Identify and resolve rejected claims after submission</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rcm-col">
+          <div class="rcm-num" style="background:#B03F77">6</div>
+          <div class="rcm-card" style="background:#FADCEA;border-top-color:#D9609A;--c:#B03F77">
+            <h3>Claim Adjudication &amp; Follow-Up</h3>
+            <p>Track claims through payer decisions and resolve outstanding issues.</p>
+            <ul>
+            <li>Claim status tracking</li>
+            <li>Denial management and appeals</li>
+            <li>Underpayment investigation and resolution</li>
+            <li>Follow-up on unpaid claims</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <details class="rcm-early">
+        <summary>
+          <span class="rcm-early-nums" aria-hidden="true"><i style="background:#6A4AD4">7</i><i style="background:#0E7C6D">8</i><i style="background:#6E6220">9</i></span>
+          <span class="rcm-early-text"><strong>Phases 7–9</strong> Payment posting &amp; reconciliation, patient billing &amp; account resolution, bank reconciliation &amp; financial controls</span>
+          <svg class="rcm-early-caret" width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+      <div class="rcm-row rcm-row-compact">
+        <div class="rcm-col is-hidden">
+          <button type="button" class="rcm-num" style="background:#6A4AD4" aria-pressed="false" aria-label="Reveal phase 7">7</button>
+          <div class="rcm-card" style="background:#E9E2FB;border-top-color:#7A5AE0;--c:#6A4AD4">
+            <h3>Payment Posting &amp; Reconciliation</h3>
+            <p>Post payments and reconcile expected versus actual reimbursement.</p>
+            <ul>
+            <li>ERA/EOB processing</li>
+            <li>Insurance payment posting</li>
+            <li>Adjustments, write-offs, and contractual allowances</li>
+            <li>Payment reconciliation and variance resolution</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rcm-col is-hidden">
+          <button type="button" class="rcm-num" style="background:#0E7C6D" aria-pressed="false" aria-label="Reveal phase 8">8</button>
+          <div class="rcm-card" style="background:#D2F3EE;border-top-color:#1FA593;--c:#0E7C6D">
+            <h3>Patient Billing &amp; Account Resolution</h3>
+            <p>Collect outstanding patient balances and resolve account discrepancies.</p>
+            <ul>
+            <li>Calculate and bill patient responsibility</li>
+            <li>Collect copayments and outstanding balances</li>
+            <li>Manage payment plans and collection follow-up</li>
+            <li>Resolve credit balances, refunds, and unapplied payments</li>
+            <li>Reconcile patient ledgers and resolve remaining balances</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rcm-col is-hidden">
+          <button type="button" class="rcm-num" style="background:#6E6220" aria-pressed="false" aria-label="Reveal phase 9">9</button>
+          <div class="rcm-card" style="background:#EFEBD2;border-top-color:#9A8A2E;--c:#6E6220">
+            <h3>Bank Reconciliation &amp; Financial Controls</h3>
+            <p>Ensure all funds are accounted for, reconciled, and protected.</p>
+            <ul>
+            <li>Fraud prevention and detection</li>
+            <li>Bank deposit and transaction reconciliation</li>
+            <li>Financial transparency and accurate accounting records</li>
+            <li>Identification and resolution of financial discrepancies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </details>
+    </div>
+  </div>
+</section>
+</div>
+
+<div id="view-about" data-page="about" hidden>
+<section class="case about-page" aria-labelledby="about-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">About me · Experience</p>
+      <h2 id="about-title">From running dental practices to building their software</h2>
+      <p>I spent 13 years co-owning and operating a growing group of dental practices. Today I build the insurance and revenue cycle software that practices like mine depend on. I know firsthand what happens to a practice's finances when RCM technology works well, and when it doesn't.</p>
+    </div>
+
+    <div class="subnav" role="list">
+      <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-main">
+        <h3 class="about-h">Experience</h3>
+        <ol class="career">
+          <li class="job">
+            <div class="job-when">2019 – present</div>
+            <div class="job-body">
+              <h4>Curve Dental</h4>
+              <p class="job-co">SaaS dental practice management software</p>
+
+              <div class="role">
+                <p class="role-title">Product Manager, Insurance &amp; RCM</p>
+                <ul class="impact">
+                  <li>Own insurance and RCM product strategy, prioritizing the roadmap by customer and business outcomes.</li>
+                  <li>Led the redesign of the claims list into the Curve RCM worklist. <a href="#claims-worklist" data-view="claims-worklist">Read the case study →</a></li>
+                  <li>Serve as the subject matter expert for dental insurance, claims, payments and revenue cycle workflows.</li>
+                  <li>Partner with Engineering and QA to ship releases with consistently low defect rates.</li>
+                  <li>Align global cross-functional teams through discovery, planning and release, and reduce delivery risk on high-risk initiatives.</li>
+                  <li>Building applied knowledge of AI agents and agentic workflows that interpret data and suggest next actions.</li>
+                </ul>
+              </div>
+
+              <div class="role">
+                <p class="role-title">Retention Account Manager &amp; Implementation Project Manager</p>
+                <ul class="impact">
+                  <li>Built trusted relationships with SMB practices that improved retention and engagement.</li>
+                  <li>Guided workflow optimization that increased feature adoption and product value.</li>
+                  <li>Brought customer insights to Product and Engineering to influence roadmap decisions.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="job">
+            <div class="job-when">2006 – 2019</div>
+            <div class="job-body">
+              <h4>Dentist By Design</h4>
+              <p class="job-co">Emerging DSO, 8 locations</p>
+              <div class="role">
+                <p class="role-title">Co-Owner &amp; VP of Operations</p>
+                <ul class="impact">
+                  <li>Led operations and revenue cycle strategy across eight practices during rapid growth.</li>
+                  <li>Built RCM processes that improved collections and streamlined insurance workflows.</li>
+                  <li>Used financial, insurance and payment data to improve performance and guide executive decisions.</li>
+                  <li>Developed patient success programs that increased satisfaction and retention.</li>
+                  <li>Supported multi-site expansion through hiring, training and standardized operations.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="about-h">Education</h3>
+        <ul class="edu">
+          <li><strong>Doctor of Business Administration</strong>, healthcare focus, summa cum laude
+            <span>Dissertation: “Balancing Care and Capital: A Longitudinal Quantitative Study on the Economics of Dental Practice Management”</span></li>
+          <li><strong>Master of Science</strong>, Management and Leadership</li>
+          <li><strong>Bachelor of Science</strong>, Business Administration Management</li>
+        </ul>
+      </div>
+
+      <aside class="about-facts" aria-label="At a glance">
+        <dl>
+          <div><dt>Based in</dt><dd>Utah</dd></div>
+          <div><dt>Specialty</dt><dd>Dental insurance &amp; RCM</dd></div>
+          <div><dt>Works with</dt><dd>Engineering, UX, QA, Customer Success, Operations, Sales, Marketing and executive leadership</dd></div>
+          <div><dt>Tools</dt><dd>Jira, Productboard, Claude, ChatGPT</dd></div>
+          <div><dt>Contact</dt><dd>myemail.megsmith@gmail.com<br>719-322-4949</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+</div>
+
+<div id="view-hobbies" data-page="hobbies" hidden>
+<section class="case about-page" aria-labelledby="hobbies-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">About me · Outside of work</p>
+      <h2 id="hobbies-title">Outside of work</h2>
+      <p>The person behind the product decisions: books, sloths, berries, dogs and a never-ending list of projects.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
+    </div>
+
+    <div class="life-list">
+      <article class="life">
+        <div class="life-media">
+          <img src="images/sloth-reading.jpg" alt="A smiling sloth reading a book under a knit blanket, next to a mug and a stack of old books" loading="lazy">
+        </div>
+        <div class="life-text">
+          <div class="life-item">
+            <h3><span class="life-emoji" aria-hidden="true">📚</span>Books Are My Background Noise</h3>
+            <p>I read and listen to books constantly. Watching TV? Audiobook. Standing in line at the grocery store? Audiobook. Doing just about anything that doesn't require my full brainpower? You guessed it. I'm always in the middle of a story.</p>
+          </div>
+          <div class="life-item">
+            <h3><span class="life-emoji" aria-hidden="true">🦥</span>Sloth Enthusiast: A Lesson in Slowing Down</h3>
+            <p>I'm naturally wired to stay busy, chase goals, and always have a project in progress. That's probably why I love sloths so much! They remind me to slow down, take in the sights, and appreciate the little things around me. Sometimes, the best reminder to pause comes from an animal that has absolutely nowhere to be.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="life">
+        <div class="life-media">
+          <img src="images/dogs-couch.jpg" alt="Two dogs curled up together on a couch with a green knit blanket, one holding a tennis ball toy" loading="lazy">
+        </div>
+        <div class="life-text">
+          <div class="life-item">
+            <h3><span class="life-emoji" aria-hidden="true">🐾</span>Dog Mom, Professional Spoiler</h3>
+            <p>My pretty princesses live a life of luxury I can only assume my children occasionally question. They are spoiled, adored, and fully convinced that the household revolves around them. Honestly, they may be right.</p>
+          </div>
+          <div class="life-item">
+            <h3><span class="life-emoji" aria-hidden="true">🫐</span>Aspiring Berry &amp; Lavender Farmer</h3>
+            <p>I grow berries and lavender, and we're choosing to focus on the word <em>grow</em> rather than my success rate with everything else. I have a greenhouse and a full indoor growing setup, yet somehow I can turn even the most promising plant into a cautionary tale. Berries and lavender seem willing to work with me, so we're sticking together.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="life-closer">
+          <div class="life-item">
+            <h3><span class="life-emoji" aria-hidden="true">🛠️</span>Perpetually in Project Mode</h3>
+            <p>There is always a project happening around here. Gardening, woodworking, trying a new hobby, or researching the supplies for a hobby I haven't technically started yet. At this point, collecting hobbies might be my most consistent hobby of all.</p>
+          </div>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+
+<div id="view-claims-worklist" data-page="claims-worklist" hidden>
+<section class="case" aria-labelledby="case1-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">Case study · Claims (RCM phases 5–6)</p>
+      <h2 id="case1-title">From a claims report to a billing team's workspace</h2>
+      <p>The starting point was a read-only list of claims. I redesigned it into a worklist that shows billers what needs attention, how much money is at stake, and lets them act without leaving the page.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
+      <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
+    </div>
+    <div class="voices" aria-labelledby="voices-title">
+      <h3 id="voices-title">What users are saying</h3>
+      <p class="voices-note">User-led, unmonitored Facebook thread. Real users, real feedback.</p>
+
+      <figure class="pull">
+        <blockquote>“Just started using it today and absolutely love it (I’m not much of a curve lover). Best update so far!”</blockquote>
+        <figcaption>Cathy, Curve RCM user</figcaption>
+      </figure>
+
+      <div class="quotes">
+        <div class="quote-col">
+          <figure class="quote">
+            <blockquote>“Much improved from claims. It saves time.”</blockquote>
+            <figcaption>Karyn</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“MAJOR improvement from claims.”</blockquote>
+            <figcaption>Brian</figcaption>
+          </figure>
+        </div>
+        <div class="quote-col">
+          <figure class="quote">
+            <blockquote>“I like it much better for adding attachments on claims and Pre-D’s, and it notifies me if there is a claim submission issue.”</blockquote>
+            <figcaption>Ashleigh</figcaption>
+          </figure>
+        </div>
+        <div class="quote-col">
+          <figure class="quote">
+            <blockquote>“I think it’s better than claims.”</blockquote>
+            <figcaption>Sunny</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“It’s amazing!”</blockquote>
+            <figcaption>Krystle</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="before-row">
+      <figure class="shot before">
+        <span class="shot-label">Before</span>
+        <div class="pinned">
+          <a href="images/claims-before.png" target="_blank" rel="noopener"><img src="images/claims-before.png" alt="The original claims report: a plain table of 17 claims with date, claim ID, patient, clinic, type, payer, two empty CHK/EFT columns, claim status and claim tag, with send actions at the bottom." loading="lazy"></a>
+          <span class="pin" data-pin="1" style="left:86.5%;top:55.7%" aria-hidden="true">1</span>
+          <span class="pin" data-pin="2" style="left:59.5%;top:16.5%" aria-hidden="true">2</span>
+          <span class="pin" data-pin="3" style="left:69%;top:46%" aria-hidden="true">3</span>
+          <span class="pin" data-pin="4" style="left:15%;top:9.8%" aria-hidden="true">4</span>
+          <span class="pin" data-pin="5" style="left:97.2%;top:16.5%" aria-hidden="true">5</span>
+          <span class="pin" data-pin="6" style="left:16%;top:16.5%" aria-hidden="true">6</span>
+          <span class="pin" data-pin="7" style="left:83.5%;top:9.8%" aria-hidden="true">7</span>
+        </div>
+        <figcaption>The original claims report. Select it to view full size.</figcaption>
+      </figure>
+      <div>
+        <h3>What wasn't working</h3>
+        <ol class="problems">
+          <li data-pin="1">Every claim looked the same. Status was plain text in one of ten columns, so problems didn't stand out.</li>
+          <li data-pin="2">No dollar amounts. A $2,883 claim and a $72 claim got the same attention.</li>
+          <li data-pin="3">Two columns, CHK/EFT number and date, were empty on every open claim.</li>
+          <li data-pin="4">Changing the view meant editing a sentence of links.</li>
+          <li data-pin="5">No owner or due date, so follow-up lived outside the system.</li>
+          <li data-pin="6">No way to act on a claim from the list. Billers had to leave the worklist and find the patient's billing ledger to work the claim.</li>
+          <li data-pin="7">Every return to the list reset all the filters, so billers rebuilt their view each time they came back.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="approach">
+      <h3>My approach: a migration worth making</h3>
+      <div class="approach-grid">
+        <div class="approach-step">
+          <p class="step-label">The direction</p>
+          <p>Leadership set the goal: build a new platform and move the claims list to it.</p>
+          <p class="step-label step-label-follow">The expectation</p>
+          <p>Lift and shift the existing list. No changes, just move it.</p>
+        </div>
+        <div class="approach-step">
+          <p class="step-label">The risk</p>
+          <p>A simple lift and shift would have cost customers without giving them anything back. They would have had to:</p>
+          <ul>
+            <li>Learn new navigation for no gain</li>
+            <li>Learn a new interface for no gain</li>
+            <li>Watch their monthly subscription fund a move that didn't improve the product</li>
+          </ul>
+        </div>
+        <div class="approach-step">
+          <p class="step-label">My plan</p>
+          <p>Deliver full feature parity, then add enough new capability to make the change worth it: features that make billers excited to retrain their muscle memory, speed up daily work, and let them act on claims that used to be lost.</p>
+        </div>
+      </div>
+
+      <div class="discovery">
+        <div>
+          <h4>Every claim action, mapped before anything was designed</h4>
+          <p>Following my product approach, I gathered SME knowledge, customer suggestions and user interviews on one board and grouped them by focus area. The notes about the claims screen became the blueprint for the worklist:</p>
+          <ul class="note-map">
+            <li><span class="sticky">Easier way to identify why a claim is invalid</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Invalid status pill and a Submission Issues filter</span></li>
+            <li><span class="sticky">Maybe shortcut icons at the top of the claims screen?</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Quick Filters with counts and dollar totals</span></li>
+            <li><span class="sticky">One click to batch all claims for the day</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Send All In Batch button</span></li>
+            <li><span class="sticky">What do I want to action from the claims list?</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Claim summary side panel and row actions</span></li>
+            <li><span class="sticky">Navigate to attachments</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Attachment icons on each row</span></li>
+            <li><span class="sticky">More user friendly view of ERA and responses</span><span class="arrow" aria-hidden="true">→</span><span class="feature">ERA status icon column</span></li>
+          </ul>
+          <a class="more-link" href="#features" data-view="features">See how I make feature decisions <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="shot after-shot">
+      <span class="shot-label after">After</span>
+      <a href="images/claims-worklist.png" target="_blank" rel="noopener"><img src="images/claims-worklist.png" alt="The redesigned claims worklist: workflow status, quick filters and KPI cards with counts and dollar totals, filters, a table with status pills, an ERA icon column, tasks and due dates, and a claim summary side panel." loading="lazy"></a>
+      <figcaption>The redesigned worklist. Patient names and figures are sample data. Select it to view full size.</figcaption>
+    </figure>
+
+    <div>
+        <h3>Decisions I made</h3>
+        <dl class="decisions">
+          <div class="decision">
+            <dt>Lead with money and workload</dt>
+            <dd>Workflow Status and Quick Filters show a count and a dollar total for each queue, such as Submission Issues: 150 claims, $7,733.12. The team can work the most valuable problems first.</dd>
+          </div>
+          <div class="decision">
+            <dt>Make status scannable</dt>
+            <dd>Status moved to the first column as a colored pill. Invalid claims are red and stand out at a glance.</dd>
+          </div>
+          <div class="decision">
+            <dt>Replace two empty columns with one ERA icon</dt>
+            <dd>One compact icon shows whether the remittance has arrived, been posted or needs attention.
+              <span class="tradeoff"><b>Tradeoff</b>The EFT number is no longer visible in the list. It moved to the claim summary panel, where it's needed for posting.</span></dd>
+          </div>
+          <div class="decision">
+            <dt>Put ownership on the row</dt>
+            <dd>Each claim can carry an assignee and a due date ("Task Due · 7d"), so nothing waits on a sticky note.</dd>
+          </div>
+          <div class="decision">
+            <dt>Open claims in a side panel</dt>
+            <dd>The claim summary opens beside the list, so billers review details without losing their place.</dd>
+          </div>
+          <div class="decision">
+            <dt>Measure the flow</dt>
+            <dd>KPIs track average days in batch and time from invoice to submission, with trend arrows that show which way each is moving.</dd>
+          </div>
+        </dl>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<div id="view-eligibility" data-page="eligibility" hidden>
+<section class="case" aria-labelledby="case2-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">Case study · Eligibility (RCM phase 3)</p>
+      <h2 id="case2-title">Eligibility+</h2>
+      <p>Eligibility+ brings AI-powered insurance verification into Curve, through a partnership with DentalXChange's EligibilityAI. It checks patient benefits automatically, pulling real-time, code-level coverage straight from payer portals. The direction came from the executive team. I led it end to end, from 0 to 1, and made it happen.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
+      <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
+    </div>
+
+    <div class="voices" aria-labelledby="voices2-title">
+      <h3 id="voices2-title">What users are saying</h3>
+      <p class="voices-note">From customer feedback and testimonials.</p>
+      <figure class="pull">
+        <blockquote>“Eligibility+ has cut down the time we spend on insurance by hours every week!”</blockquote>
+        <figcaption>Dr. Williams, DDS</figcaption>
+      </figure>
+      <div class="quotes quotes-2">
+        <div class="quote-col"><figure class="quote"><blockquote>“E+ gets me 90% of the way there. Now my attention can be spent on the specialized info I need.”</blockquote><figcaption>Sarah</figcaption></figure></div>
+        <div class="quote-col"><figure class="quote"><blockquote>“Automation for the win. I start work with all my verifications done. It cuts out the manual workload.”</blockquote><figcaption>Kelli</figcaption></figure></div>
+      </div>
+
+      <div class="results results-in-voices">
+        <h3>Reported results</h3>
+        <p class="voices-note">As published by Curve Dental for practices using Eligibility+.</p>
+        <dl class="stat-row">
+          <div><dt>15–30 min</dt><dd>saved per patient</dd></div>
+          <div><dt>40%</dt><dd>less admin workload</dd></div>
+          <div><dt>20%</dt><dd>boost in treatment acceptance</dd></div>
+          <div><dt>150%</dt><dd>increase in same-day acceptance</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="before-row">
+      <figure class="shot before">
+        <span class="shot-label">Before: the manual way</span>
+        <div class="manual" role="img" aria-label="Illustration of manual eligibility checks: on hold with payers across several portals, benefits typed by hand with a typo, a result that only says active, and a patient left waiting">
+          <div class="mv">
+            <span class="mv-num">1</span>
+            <div class="mv-hold"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 8.6 7.6 6.7 9.3a11 11 0 0 0 6 6l1.7-1.9 4.1 2-.8 3.3c-.1.6-.7 1-1.3 1C9.4 19.1 4.9 14.6 4.4 7.6c0-.6.4-1.2 1-1.3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="mv-timer">On hold · 00:47:12</span></div>
+            <div class="mv-tabs"><span>Payer portal</span><span>Payer portal</span><span>Payer portal</span><span>+</span></div>
+          </div>
+          <div class="mv">
+            <span class="mv-num">2</span>
+            <div class="mv-form">
+              <div><span>Annual max</span><b>$1,500</b></div>
+              <div class="mv-typo"><span>Deductible</span><b>$5,000</b></div>
+              <div><span>Cleanings</span><b>2 / yr</b></div>
+            </div>
+          </div>
+          <div class="mv">
+            <span class="mv-num">3</span>
+            <div class="mv-status"><span>Coverage</span><b class="mv-active">Active</b></div>
+            <div class="mv-codes">
+              <div><span>D2740 Crown</span><b>?</b></div>
+              <div><span>D4341 Scaling</span><b>?</b></div>
+            </div>
+          </div>
+          <div class="mv">
+            <span class="mv-num">4</span>
+            <div class="mv-hold"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="mv-timer">Waiting on benefits…</span></div>
+            <span class="mv-delay">Treatment delayed</span>
+          </div>
+        </div>      </figure>
+      <div>
+        <h3>What wasn't working</h3>
+        <ol class="problems">
+          <li>Staff spent hours on hold with insurance companies or jumping between payer portals.</li>
+          <li>Benefits were typed in by hand, so details were easy to miss or mistype.</li>
+          <li>Most checks returned only basic information, such as "active" or "inactive" coverage, not what each procedure would pay.</li>
+          <li>Patients waited longer for answers and often delayed treatment.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="approach">
+      <h3>My approach</h3>
+      <div class="approach-grid">
+        <div class="approach-step">
+          <p class="step-label">The direction</p>
+          <p>Leadership set the goal: bring DentalXChange's EligibilityAI product to our customers.</p>
+          <p class="step-label step-label-follow">The expectation</p>
+          <p>Send customers to the DentalXChange dashboard, or connect it to Curve, so they could see EligibilityAI's responses there.</p>
+        </div>
+        <div class="approach-step">
+          <p class="step-label">The risk</p>
+          <p>Sending customers to a third-party dashboard offered no real benefit:</p>
+          <ul>
+            <li>No advantage over using a competitor's product, like AirPay</li>
+            <li>Nothing connecting it to the rest of Curve</li>
+            <li>A look and feel that would still be disconnected</li>
+          </ul>
+        </div>
+        <div class="approach-step">
+          <p class="step-label">My plan</p>
+          <p>White-label EligibilityAI so it feels like a Curve product, not a DentalXChange product:</p>
+          <ul>
+            <li>The UI matches the rest of Curve</li>
+            <li>The workflow feels familiar and intuitive</li>
+            <li><strong>SmartCompare</strong> shows what the practice already knows next to what it should know, to fill in the gaps</li>
+            <li><strong>SmartSync</strong> updates benefit details in one click, removing even more manual work</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="discovery">
+        <div>
+          <h4>From problem to feature</h4>
+          <p>Each problem practices faced became a feature:</p>
+          <ul class="note-map">
+            <li><span class="sticky">Automation: every patient was checked manually, one at a time</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Checks run automatically at three set times, so verifications are done and ready to review when staff get to work</span></li>
+            <li><span class="sticky">Bad information already in the system</span><span class="arrow" aria-hidden="true">→</span><span class="feature">SmartCompare shows the benefits on file next to what the insurance portal reports, so staff see right away what needs updating</span></li>
+            <li><span class="sticky">Benefits updated by hand in the practice management system</span><span class="arrow" aria-hidden="true">→</span><span class="feature">SmartSync updates benefits in one click, so accurate benefits are ready to act on</span></li>
+            <li><span class="sticky">Updating treatment plans meant finding each plan and redoing the calculations</span><span class="arrow" aria-hidden="true">→</span><span class="feature">Treatment plans update in one click from the benefit results</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <figure class="shot after-shot">
+      <span class="shot-label after">After</span>
+      <div class="pinned">
+        <a href="images/eligibility-after.png" target="_blank" rel="noopener"><img src="images/eligibility-after.png" alt="The Eligibility+ worklist in Curve RCM: quick filters for credential errors, unsupported carriers and unsent requests, and a list of upcoming appointments showing each patient's eligibility response status, carrier and plan." loading="lazy"></a>
+        <span class="pin pin-good" data-callout="1" style="left:52.6%;top:14.8%" aria-hidden="true">1</span>
+        <span class="pin pin-good" data-callout="2" style="left:31.8%;top:32.7%" aria-hidden="true">2</span>
+        <span class="pin pin-good" data-callout="3" style="left:95.1%;top:32.7%" aria-hidden="true">3</span>
+        <span class="pin pin-good" data-callout="4" style="left:14.6%;top:32.7%" aria-hidden="true">4</span>
+        <span class="bubble" data-callout="4" style="left:12%;top:75%;width:18.5%" aria-hidden="true"><b>Response status</b>Quickly scan the health of every verification and response.</span>
+        <span class="bubble" data-callout="1" style="left:55%;top:7%;width:25%" aria-hidden="true"><b>Quick filters</b>Resolve issues first, which frees up more time for productive work.</span>
+        <span class="bubble" data-callout="2" style="left:34%;top:37%;width:20%" aria-hidden="true"><b>Appointment status</b>Another way to know which patients need attention.</span>
+        <span class="bubble bubble-right" data-callout="3" style="right:6.5%;top:37%;width:21%" aria-hidden="true"><b>Quick open</b>Opens SmartCompare for that patient in one click.</span>
+      </div>
+      <figcaption>Patient and clinic names are sample data.</figcaption>
+    </figure>
+
+    <figure class="shot after-shot">
+      <span class="shot-label after">After: SmartCompare</span>
+      <div class="sc-collage">
+        <a class="sc-tile" href="images/sc-response.png" target="_blank" rel="noopener" style="left:0;top:0;width:60%;--r:-1.5deg;z-index:1"><img src="images/sc-response.png" alt="Eligibility+ response header: submitted and returned payer, plan and group number, each with a green check, beside the appointment details" loading="lazy"></a>
+        <a class="sc-tile" href="images/eligibility-smartcompare.png" target="_blank" rel="noopener" style="right:0;top:4%;width:50%;--r:1.5deg;z-index:2"><img src="images/eligibility-smartcompare.png" alt="SmartCompare payer coverage by procedure code, existing data compared with the payer response" loading="lazy"></a>
+        <a class="sc-tile" href="images/sc-frequency.png" target="_blank" rel="noopener" style="left:4%;top:36%;width:50%;--r:1deg;z-index:3"><img src="images/sc-frequency.png" alt="SmartCompare frequency limits with the payer notes" loading="lazy"></a>
+        <a class="sc-tile" href="images/sc-age.png" target="_blank" rel="noopener" style="right:3%;top:50%;width:40%;--r:-1deg;z-index:4"><img src="images/sc-age.png" alt="SmartCompare age restrictions" loading="lazy"></a>
+        <a class="sc-tile" href="images/sc-maximums.png" target="_blank" rel="noopener" style="left:30%;top:70%;width:34%;--r:-2deg;z-index:5"><img src="images/sc-maximums.png" alt="SmartCompare annual and lifetime maximums" loading="lazy"></a>
+      </div>
+      <figcaption>SmartCompare lines up what's in Curve with what the payer reports, across coverage, frequencies, age restrictions and maximums. Staff check the rows to update, and SmartSync applies them in one click.</figcaption>
+    </figure>
+
+    <figure class="shot after-shot">
+      <span class="shot-label after">After: SmartSync</span>
+      <div class="sync-steps">
+        <div class="sync-step">
+          <p class="sync-step-title"><span>1</span>Review the differences</p>
+          <img src="images/sync-step1.png" alt="SmartCompare rows checked and marked Will Sync, existing coverage 100% versus the payer's 50% or 60%" loading="lazy">
+        </div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="sync-step">
+          <p class="sync-step-title"><span>2</span>Click SmartSync</p>
+          <div class="btn-zoom"><img src="images/sync-step2.png" alt="The Recalculate and SmartSync buttons" loading="lazy"><svg class="cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6.2 1.6L10 19z" fill="#fff" stroke="#13232b" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="click-ring" aria-hidden="true"></span></div>
+        </div>
+      </div>
+      <div class="flow-down" aria-hidden="true"><span>↓</span></div>
+      <p class="sync-step-title sync-step-3"><span>3</span>The plan updates in Curve, and records that SmartSync did it</p>
+      <div class="pinned sync-shot">
+        <a href="images/smartsync-plan.png" target="_blank" rel="noopener"><img src="images/smartsync-plan.png" alt="The plan's coverage screen in Curve after SmartSync: coverage percentages by category with updated values highlighted, a banner confirming the update, and Plan Last Updated by Meg Smith via SmartSync." loading="lazy"></a>
+        <span class="sync-toast" style="left:15.4%;top:21.6%" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>SmartSync updated this plan from the Eligibility+ response</span>
+        <span class="sync-hl" style="left:28.88%;top:53.61%;width:6.22%;height:5.21%" aria-hidden="true"><i>Updated</i></span>
+        <span class="sync-hl" style="left:28.88%;top:76.87%;width:6.22%;height:5.21%" aria-hidden="true"><i>Updated</i></span>
+        <span class="sync-hl" style="left:28.88%;top:92.38%;width:6.22%;height:5.21%" aria-hidden="true"><i>Updated</i></span>
+        <span class="sync-hl sync-hl-text" style="left:89.46%;top:8.16%;width:8.05%;height:2.9%" aria-hidden="true"></span>
+      </div>
+      <figcaption>Once staff approve, SmartSync writes the changes straight into the patient's plan in Curve, and the plan records that it was updated via SmartSync. Mockup: the banner and highlights show what changed.</figcaption>
+    </figure>
+
+    <div>
+      <h3>Decisions I made</h3>
+      <dl class="decisions">
+        <div class="decision"><dt>White-label it as a Curve product</dt><dd>Instead of sending customers to a partner's dashboard, EligibilityAI lives inside Curve with the same look, feel and workflow, so it reads as part of the product they already use.</dd></div>
+        <div class="decision"><dt>Verify automatically, then filter out the noise</dt><dd>Eligibility+ checks insurance on its own, so staff stop waiting on hold and switching between payer portals. Quick filters, such as carrier credential errors, unsupported carriers and requests not yet sent, let staff ignore everything that's fine and pay attention only to what needs it.</dd></div>
+        <div class="decision"><dt>Compare and contrast with SmartCompare</dt><dd>Instead of a simple "active" or "inactive," SmartCompare puts the benefits already in Curve next to what the payer reports, code by code, so staff can see at a glance what's wrong or missing.</dd></div>
+        <div class="decision"><dt>Update in one click with SmartSync</dt><dd>Once staff review the differences, SmartSync updates the benefit details in one click.
+          <span class="tradeoff"><b>Tradeoff</b>Updates wait for a person to approve them instead of overwriting records automatically, which keeps the team in control and prevents surprises.</span></dd></div>
+        <div class="decision"><dt>Answers before the patient arrives</dt><dd>Upfront clarity means no surprises at checkout, a faster check-in, and clear numbers that make it easier to say yes to same-day treatment.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p class="footer-name">Megan Smith</p>
+      <p class="footer-tag">Product Manager specializing in dental insurance and revenue cycle management.</p>
+    </div>
+    <div>
+      <p class="footer-label">Explore</p>
+      <ul class="footer-links">
+        <li><a href="#approach" data-view="approach">Outcome determinations</a></li>
+        <li><a href="#features" data-view="features">Feature decisions</a></li>
+        <li><a href="#launch" data-view="launch">After release</a></li>
+        <li><a href="#ai-work" data-view="ai-work">AI in my work</a></li>
+        <li><a href="#ai-product" data-view="ai-product">AI agents in the product</a></li>
+        <li><a href="#lifecycle" data-view="lifecycle">RCM expertise</a></li>
+        <li><a href="#claims-worklist" data-view="claims-worklist">Case study: Claims worklist</a></li>
+        <li><a href="#eligibility" data-view="eligibility">Case study: Eligibility+</a></li>
+        <li><a href="#about" data-view="about">Experience</a></li>
+        <li><a href="#hobbies" data-view="hobbies">Outside of work</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-label">Get in touch</p>
+      <ul class="footer-links">
+        <li><a href="mailto:myemail.megsmith@gmail.com">myemail.megsmith@gmail.com</a></li>
+        <li><a href="tel:+17193224949">719-322-4949</a> <span class="footer-tag">call or text</span></li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2026 Megan Smith</p>
+  </div>
+</footer>
+
+<script>
+  // ---------- Menu + views ----------
+  const menuBtn = document.getElementById('menu-btn');
+  const menuPanel = document.getElementById('menu-panel');
+  const views = document.querySelectorAll('[data-page]');
+
+  const drops = [...document.querySelectorAll('.nav-drop')].map(el => ({
+    btn: el.querySelector('.nav-drop-btn'),
+    panel: el.querySelector('.nav-drop-panel'),
+    pages: el.dataset.pages.split(' ')
+  }));
+  function closeDrops() {
+    drops.forEach(d => { d.panel.hidden = true; d.btn.setAttribute('aria-expanded', 'false'); });
+  }
+  drops.forEach(d => d.btn.addEventListener('click', () => {
+    const open = d.panel.hidden;
+    closeDrops();
+    d.panel.hidden = !open;
+    d.btn.setAttribute('aria-expanded', String(open));
+  }));
+  function setMenu(open) {
+    menuPanel.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+  }
+  function showView(name, scrollId) {
+    const known = [...views].some(v => v.dataset.page === name);
+    if (!known) name = 'home';
+    views.forEach(v => { v.hidden = v.dataset.page !== name; });
+    document.querySelectorAll('.top-nav a, .menu-panel a, .subnav a').forEach(a => {
+      const current = a.dataset.view === name && !a.dataset.scroll;
+      if (current) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    drops.forEach(d => {
+      if (d.pages.includes(name)) d.btn.setAttribute('aria-current', 'page'); else d.btn.removeAttribute('aria-current');
+    });
+    const target = scrollId && document.getElementById(scrollId);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    else window.scrollTo(0, 0);
+  }
+
+  menuBtn.addEventListener('click', () => setMenu(menuPanel.hidden));
+  document.addEventListener('click', e => {
+    if (!menuPanel.hidden && !e.target.closest('.menu')) setMenu(false);
+    if (!e.target.closest('.nav-drop')) closeDrops();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !menuPanel.hidden) { setMenu(false); menuBtn.focus(); }
+    const openDrop = drops.find(d => !d.panel.hidden);
+    if (e.key === 'Escape' && openDrop) { closeDrops(); openDrop.btn.focus(); }
+  });
+  document.querySelectorAll('a[data-view]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      setMenu(false);
+      closeDrops();
+      showView(a.dataset.view, a.dataset.scroll);
+      try { history.replaceState(null, '', a.getAttribute('href')); } catch (err) {}
+    });
+  });
+
+  // open the view named in the link, e.g. #claims-worklist
+  const startHash = location.hash.slice(1);
+  showView(startHash === 'rcm' ? 'lifecycle' : (startHash || 'home'));
+
+  // ---------- Link problem list items to their pins ----------
+  document.querySelectorAll('.problems li[data-pin]').forEach(li => {
+    const pin = document.querySelector('.pin[data-pin="' + li.dataset.pin + '"]');
+    const on = () => { li.classList.add('active'); pin && pin.classList.add('active'); };
+    const off = () => { li.classList.remove('active'); pin && pin.classList.remove('active'); };
+    li.addEventListener('mouseenter', on);
+    li.addEventListener('mouseleave', off);
+    if (pin) { pin.addEventListener('mouseenter', on); pin.addEventListener('mouseleave', off); }
+  });
+
+  // ---------- RCM lifecycle: reveal phases ----------
+  document.querySelectorAll('.rcm-life button.rcm-num').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const hidden = btn.closest('.rcm-col').classList.toggle('is-hidden');
+      btn.setAttribute('aria-pressed', hidden ? 'false' : 'true');
+    });
+  });
+
+  // ---------- Link Eligibility+ markers and bubbles ----------
+  document.querySelectorAll('.bubble[data-callout]').forEach(b => {
+    const pin = document.querySelector('.pin[data-callout="' + b.dataset.callout + '"]');
+    const on = () => { b.classList.add('active'); pin && pin.classList.add('active'); };
+    const off = () => { b.classList.remove('active'); pin && pin.classList.remove('active'); };
+    b.addEventListener('mouseenter', on); b.addEventListener('mouseleave', off);
+    if (pin) { pin.addEventListener('mouseenter', on); pin.addEventListener('mouseleave', off); }
+  });
+
+  // ---------- Link Eligibility+ callouts to their markers ----------
+  document.querySelectorAll('.callouts li[data-callout]').forEach(li => {
+    const pin = document.querySelector('.pin[data-callout="' + li.dataset.callout + '"]');
+    const on = () => { li.classList.add('active'); pin && pin.classList.add('active'); };
+    const off = () => { li.classList.remove('active'); pin && pin.classList.remove('active'); };
+    li.addEventListener('mouseenter', on); li.addEventListener('mouseleave', off);
+    if (pin) { pin.addEventListener('mouseenter', on); pin.addEventListener('mouseleave', off); }
+  });
+
+  // ---------- Example dashboard: crosshair + tooltip ----------
+  document.querySelectorAll('.trend[data-series]').forEach(box => {
+    const rows = box.dataset.series.split(';').map(r => r.split('|'));
+    const svg = box.querySelector('svg'), cross = box.querySelector('.d-cross'), tip = box.querySelector('.d-tip');
+    box.querySelectorAll('.d-hit').forEach(hit => {
+      hit.addEventListener('mouseenter', () => {
+        const i = +hit.dataset.i, [week, rcm, hero] = rows[i];
+        const x = +hit.getAttribute('x') + +hit.getAttribute('width') / 2;
+        cross.setAttribute('x1', x); cross.setAttribute('x2', x); cross.setAttribute('visibility', 'visible');
+        tip.innerHTML = '<b>Week of ' + week + '</b><i style="background:var(--rcm)"></i>RCM ' + (+rcm).toLocaleString() + '<br><i style="background:var(--hero)"></i>Hero ' + (+hero).toLocaleString();
+        tip.hidden = false;
+        const scale = svg.getBoundingClientRect().width / 720;
+        const left = x * scale, w = tip.offsetWidth;
+        tip.style.left = Math.min(Math.max(left - w / 2, 0), box.clientWidth - w) + 'px';
+        tip.style.top = '4px';
+      });
+      hit.addEventListener('mouseleave', () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); });
+    });
+  });
+
+  // ---------- Copy buttons ----------
+  document.querySelectorAll('.copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy;
+      const done = () => { btn.textContent = 'Copied'; setTimeout(() => (btn.textContent = 'Copy'), 1600); };
+      const fallback = () => {
+        const link = btn.parentElement.querySelector('a');
+        const range = document.createRange();
+        range.selectNodeContents(link);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'Selected';
+        setTimeout(() => (btn.textContent = 'Copy'), 1600);
+      };
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+</script>
+</body>
+</html>
