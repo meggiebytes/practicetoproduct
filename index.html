@@ -1364,7 +1364,7 @@
   .site-footer .wrap {
     padding-block: clamp(40px, 6vw, 64px) calc(clamp(40px, 6vw, 64px) + env(safe-area-inset-bottom, 0px));
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr) minmax(0, 1fr);
     gap: 32px;
   }
   .footer-name { font-family: var(--font-display); font-weight: 700; font-size: 18px; margin: 0 0 4px; }
@@ -1377,6 +1377,8 @@
     margin: 0 0 10px;
   }
   .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 14px; }
+  .footer-explore { display: block; columns: 2; column-gap: 28px; }
+  .footer-explore li { break-inside: avoid; margin-bottom: 4px; }
   .footer-links a { color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
   .footer-links a:hover { color: var(--accent); text-decoration: underline; }
   .footer-copy { grid-column: 1 / -1; margin: 8px 0 0; font-size: 12px; color: var(--muted); }
@@ -2871,7 +2873,7 @@
     </div>
     <div>
       <p class="footer-label">Explore</p>
-      <ul class="footer-links">
+      <ul class="footer-links footer-explore">
         <li><a href="#approach" data-view="approach">Outcome determinations</a></li>
         <li><a href="#features" data-view="features">Feature decisions</a></li>
         <li><a href="#quad" data-view="quad">Working as a product quad</a></li>
