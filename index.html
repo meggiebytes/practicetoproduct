@@ -1024,6 +1024,16 @@
     .dash-kpis > div:nth-child(-n+2) { border-top: 0; }
     .dash-kpis > div:nth-child(even) { border-left: 1px solid var(--line); }
   }
+  /* product quad page */
+  .quad-points { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; max-width: 64ch; }
+  .quad-points li { text-wrap: pretty; }
+  .quad-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; max-width: 760px; }
+  .quad-cell { display: grid; gap: 6px; padding: 16px 18px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); min-width: 0; }
+  .quad-cell span { color: var(--muted); font-size: 14px; line-height: 1.45; }
+  .quad-cell b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
+  .quad-role { font: 500 12px/1.2 var(--font-mono) !important; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent) !important; }
+  .quad-qa { background: var(--accent-soft); border-color: transparent; }
+  @media (max-width: 560px) { .quad-grid { grid-template-columns: minmax(0, 1fr); } }
   .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
   @media (max-width: 980px) {
     .input-groups, .step-split { grid-template-columns: minmax(0, 1fr); }
@@ -1396,7 +1406,7 @@
   <div class="wrap topbar-inner">
     <a class="brand" href="#" data-view="home">Megan Smith</a>
     <div class="top-nav" role="list">
-      <div class="nav-drop" role="listitem" data-pages="approach features launch">
+      <div class="nav-drop" role="listitem" data-pages="approach features quad launch">
         <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-approach">
           Product approach
           <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1404,6 +1414,7 @@
         <div class="nav-drop-panel" id="drop-approach" hidden>
           <a href="#approach" data-view="approach">Outcome determinations<small>Deciding what needs to change</small></a>
           <a href="#features" data-view="features">Feature decisions<small>PRD, prototype and engineering</small></a>
+          <a href="#quad" data-view="quad">Working as a product quad<small>Product, UX, engineering and QA</small></a>
           <a href="#launch" data-view="launch">After release<small>Customer Service, Sales and Marketing</small></a>
         </div>
       </div>
@@ -1464,6 +1475,7 @@
           <p class="menu-label">How I work</p>
           <a href="#approach" data-view="approach">Outcome determinations<small>Deciding what needs to change</small></a>
           <a href="#features" data-view="features">Feature decisions<small>PRD, prototype and engineering</small></a>
+          <a href="#quad" data-view="quad">Working as a product quad<small>Product, UX, engineering and QA</small></a>
           <a href="#launch" data-view="launch">After release<small>Customer Service, Sales and Marketing</small></a>
           <a href="#lifecycle" data-view="lifecycle">My RCM expertise<small>All nine phases, end to end</small></a>
         </div>
@@ -1549,7 +1561,8 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
       <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
-      <a role="listitem" href="#launch" data-view="launch">3. After release</a>
+      <a role="listitem" href="#quad" data-view="quad">3. Working as a quad</a>
+      <a role="listitem" href="#launch" data-view="launch">4. After release</a>
     </div>
 
     <ol class="steps">
@@ -1723,7 +1736,8 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
       <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
-      <a role="listitem" href="#launch" data-view="launch">3. After release</a>
+      <a role="listitem" href="#quad" data-view="quad">3. Working as a quad</a>
+      <a role="listitem" href="#launch" data-view="launch">4. After release</a>
     </div>
 
     <ol class="steps">
@@ -1820,6 +1834,96 @@
       </li>
     </ol>
 
+    <a class="more-link" href="#quad" data-view="quad">Next: how I work as a product quad <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-quad" data-page="quad" hidden>
+<section class="case approach-page" aria-labelledby="quad-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">Product approach · Working as a quad</p>
+      <h2 id="quad-title">How I work as a product quad</h2>
+      <p>The industry calls it a product trio: product, design and engineering making decisions together instead of handing work down a line. I've added QA, so quality is designed in from the start instead of tested in at the end.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
+      <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
+      <a role="listitem" href="#quad" data-view="quad">3. Working as a quad</a>
+      <a role="listitem" href="#launch" data-view="launch">4. After release</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body">
+          <h3>Four perspectives, one decision</h3>
+          <p class="step-lede">Every product decision carries risk: will customers want it, can they use it, can we build it, and does it work for the business? Adding QA covers one more: will it hold up? Each of us owns a lens, and we look at every decision through all four.</p>
+          <div class="quad-grid" role="table" aria-label="Who owns what in the product quad">
+            <div class="quad-cell" role="row"><span class="quad-role" role="rowheader">Product</span><span role="cell"><b>Value and viability</b>Is this the right problem, and is it worth solving?</span></div>
+            <div class="quad-cell" role="row"><span class="quad-role" role="rowheader">UX</span><span role="cell"><b>Usability</b>Can people actually use this?</span></div>
+            <div class="quad-cell" role="row"><span class="quad-role" role="rowheader">Engineering</span><span role="cell"><b>Feasibility</b>Can we build it well, and what are the tradeoffs?</span></div>
+            <div class="quad-cell quad-qa" role="row"><span class="quad-role" role="rowheader">QA</span><span role="cell"><b>Quality and risk</b>How could this break, and how will we know it works?</span></div>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body">
+          <h3>Discovery, as development has time</h3>
+          <p class="step-lede">Engineering's focus time belongs to building, so I don't require developers to join every customer conversation. I bring discovery to them instead, with short summaries and prototypes of what I'm learning.</p>
+          <p class="step-lede step-lede-more">When developers have the bandwidth, or when a question needs their expertise, I invite them in. Even one conversation with a real user can change how a feature gets built.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body">
+          <h3>Define "done" together</h3>
+          <p class="step-lede">Before development starts, product, engineering and QA walk through each story together. The industry calls this a "Three Amigos" session.</p>
+          <ul class="quad-points">
+            <li>We write acceptance criteria and edge cases together, often as "Given / When / Then"</li>
+            <li>QA brings testability and risk into the conversation early, while changes are still cheap</li>
+            <li>Everyone leaves with the same definition of done</li>
+          </ul>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <h3>Build and check in together</h3>
+          <p class="step-lede">Progress reviews start twice a week and move to daily as release gets closer. When new risks surface, the quad decides together what to adjust, cut or deprioritize, so no one is surprised by a scope change.</p>
+          <p class="step-lede step-lede-more"><a href="#features" data-view="features">See how I partner with engineering →</a></p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <div class="step-body">
+          <h3>Release together</h3>
+          <p class="step-lede">Quality gates are agreed up front, not negotiated at the end. We demo and review as a quad, and look back together on what to keep and what to change. Working this way helps us ship releases with consistently low defect rates.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <div class="step-body">
+          <h3>Speak with one voice</h3>
+          <p class="step-lede">The quad presents decisions and tradeoffs to stakeholders together. Each person has clear decision rights in their area, and when we disagree, we talk it through, decide, and commit as a team.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <div class="step-body">
+          <h3>What I avoid</h3>
+          <ul class="quad-points">
+            <li>Waterfall handoffs: product writes, design draws, engineering builds, QA finds the problems</li>
+            <li>Product as an order-taker, or design as decoration</li>
+            <li>QA seeing a feature for the first time when it is ready to test</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
     <a class="more-link" href="#launch" data-view="launch">Next: how I work after release <span aria-hidden="true">→</span></a>
   </div>
 </section>
@@ -1837,7 +1941,8 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#approach" data-view="approach">1. Outcome determinations</a>
       <a role="listitem" href="#features" data-view="features">2. Feature decisions</a>
-      <a role="listitem" href="#launch" data-view="launch">3. After release</a>
+      <a role="listitem" href="#quad" data-view="quad">3. Working as a quad</a>
+      <a role="listitem" href="#launch" data-view="launch">4. After release</a>
     </div>
 
     <ol class="steps">
@@ -2754,6 +2859,7 @@
       <ul class="footer-links">
         <li><a href="#approach" data-view="approach">Outcome determinations</a></li>
         <li><a href="#features" data-view="features">Feature decisions</a></li>
+        <li><a href="#quad" data-view="quad">Working as a product quad</a></li>
         <li><a href="#launch" data-view="launch">After release</a></li>
         <li><a href="#ai-work" data-view="ai-work">AI in my work</a></li>
         <li><a href="#ai-product" data-view="ai-product">AI agents in the product</a></li>
