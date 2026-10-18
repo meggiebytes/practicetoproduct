@@ -396,13 +396,17 @@
   .back:hover { text-decoration: underline; }
 
   /* ---------- Hero ---------- */
-  .hero { padding-block: clamp(40px, 7vw, 88px) 56px; }
+  .hero { padding-block: 40px 40px; }
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: clamp(32px, 6vw, 72px);
-    align-items: center;
+    align-items: start;
   }
+  .hero-side { display: grid; gap: 14px; min-width: 0; }
+  .hero-contact { margin-top: 0; gap: 8px; flex-wrap: wrap; }
+  .hero-contact .copy { padding: 6px 9px; }
+  .hero-contact .chip { font-size: 14px; padding: 6px 6px 6px 14px; }
   .eyebrow {
     font-family: var(--font-mono);
     font-size: 14px;
@@ -1510,19 +1514,19 @@
         I build software that closes those gaps.
       </p>
 
-      <div class="contact">
+    </div>
+
+    <div class="hero-side">
+      <div class="contact hero-contact">
         <span class="chip">
           <a href="mailto:myemail.megsmith@gmail.com" id="email">myemail.megsmith@gmail.com</a>
           <button class="copy" type="button" data-copy="myemail.megsmith@gmail.com" aria-label="Copy email address">Copy</button>
         </span>
         <span class="chip">
           <a href="tel:+17193224949" id="phone">719-322-4949</a>
-          <span class="note">call or text</span>
           <button class="copy" type="button" data-copy="719-322-4949" aria-label="Copy phone number">Copy</button>
         </span>
       </div>
-    </div>
-
     <section class="vp-card" aria-labelledby="vp-title">
       <h2 id="vp-title">I've seen RCM from every side</h2>
       <ol class="vp-list">
@@ -1535,6 +1539,7 @@
       </ol>
       <p class="vp-foot">I've been the customer, supported the customer, and now build for the customer.</p>
     </section>
+    </div>
   </div>
 </header>
 
