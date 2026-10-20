@@ -1038,6 +1038,28 @@
   .quad-role { font: 500 12px/1.2 var(--font-mono) !important; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent) !important; }
   .quad-qa { background: var(--accent-soft); border-color: transparent; }
   @media (max-width: 560px) { .quad-grid { grid-template-columns: minmax(0, 1fr); } }
+  /* AI ROI graphic */
+  .roi {
+    display: grid; grid-template-columns: minmax(0, 0.8fr) auto minmax(0, 1.6fr);
+    align-items: center; gap: 16px; margin: 20px 0 8px; max-width: 760px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px;
+  }
+  .roi-cost { display: grid; justify-items: start; gap: 6px; padding: 16px; border-radius: 8px; background: var(--warn-soft); min-width: 0; }
+  .roi-cost .roi-icon { color: var(--warn); }
+  .roi-cost strong { font-size: 16px; }
+  .roi-cost span:last-child { font-size: 14px; color: var(--muted); }
+  .roi-arrow { font-size: 28px; color: var(--accent); font-weight: 600; }
+  .roi-returns { display: grid; gap: 8px; min-width: 0; }
+  .roi-label { margin: 0 0 2px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .roi-ret { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 10px; align-items: center; padding: 10px 12px; border-radius: 8px; background: var(--accent-soft); }
+  .roi-ret .roi-icon { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); color: var(--accent); }
+  .roi-ret strong { display: block; font-size: 16px; line-height: 1.25; }
+  .roi-ret span { font-size: 14px; color: var(--muted); line-height: 1.4; }
+  .roi-icon svg { display: block; }
+  @media (max-width: 640px) {
+    .roi { grid-template-columns: minmax(0, 1fr); }
+    .roi-arrow { transform: rotate(90deg); justify-self: center; }
+  }
   .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
   @media (max-width: 980px) {
     .input-groups, .step-split { grid-template-columns: minmax(0, 1fr); }
@@ -2170,6 +2192,20 @@
         <div class="step-body">
           <h3>Making AI pay for itself</h3>
           <p class="step-lede">Most software costs almost nothing extra each time someone uses it. AI is different: every action costs money each time it runs, so a popular feature can also become an expensive one. That's why I treat AI like any other investment: it has to earn more than it costs.</p>
+          <div class="roi" role="img" aria-label="AI cost per use has to be earned back through time saved for the customer, revenue protected, or business value for the company">
+            <div class="roi-cost">
+              <span class="roi-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5v1.5M12 16v1.5"/></svg></span>
+              <strong>AI cost per use</strong>
+              <span>Every request, every time</span>
+            </div>
+            <span class="roi-arrow" aria-hidden="true">→</span>
+            <div class="roi-returns">
+              <p class="roi-label">Has to earn back</p>
+              <div class="roi-ret"><span class="roi-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Time saved</strong><span>for the customer</span></div></div>
+              <div class="roi-ret"><span class="roi-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div><strong>Revenue protected</strong><span>fewer denials, fewer missed payments</span></div></div>
+              <div class="roi-ret"><span class="roi-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><div><strong>Business value</strong><span>customers pay more, stay longer, or choose us over a competitor</span></div></div>
+            </div>
+          </div>
           <div class="subpoint">
             <h4>Cost sets the floor, value sets the price</h4>
             <p>I aim for a 75% gross margin on any hard cost. If an action costs us $0.10, it should bring in at least $0.40. Value to the customer decides whether we can charge more.</p>
