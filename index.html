@@ -1045,6 +1045,12 @@
   .lesson dd { margin: 0; text-wrap: pretty; }
   .lesson .lesson-learned { background: var(--accent-soft); border-radius: 8px; padding: 14px 16px; }
   .lesson .lesson-learned dt { color: var(--accent); }
+  .lesson-kind { margin: 0 0 4px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .lesson-pair { display: flex; flex-wrap: wrap; gap: 24px; margin: 16px 0 4px; }
+  .lesson-pair figure { margin: 0; width: 170px; }
+  .lesson-pair img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  .lesson-pair figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .lesson-pair figcaption b { display: block; font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
   /* AI ROI graphic */
   .roi-img { display: block; width: 100%; max-width: 760px; height: auto; margin: 20px 0 8px; border-radius: 14px; border: 1px solid var(--line); }
   .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
@@ -2956,6 +2962,27 @@
             <div><dt>The request</dt><dd>A DSO asked for a specific feature. I met with their account manager and one of our VPs, who explained the problem and the requirements.</dd></div>
             <div><dt>What happened</dt><dd>In beta, the DSO told us it missed the mark. Our solution solved the problem for 99% of users, but not for the DSO we built it for. We had to add a whole new set of functionality to the feature.</dd></div>
             <div class="lesson-learned"><dt>What I learned</dt><dd>Go to the source. I should have met with the DSO directly to understand how they used this feature in their legacy software and what they expected. We could have built the full feature the first time, without the delay or the missed requirements.</dd></div>
+          </dl>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <p class="lesson-kind">Tradeoff</p>
+          <h3>Red followed the rules. Blue followed the user.</h3>
+          <dl class="lesson">
+            <div><dt>The starting point</dt><dd>In Eligibility+, the snapshot of the day's appointments showed responses that needed attention, like carrier credential issues and basic-only responses, with red icons. UX wanted red: it followed our design guidelines and matched how we used color elsewhere in the product.</dd></div>
+            <div><dt>What users told us</dt><dd>Users read red as failure. "Everything is failing." "I get so many errors." "It's not working, I need to cancel." Nothing was broken, but a wall of red made a working feature feel like a failing one.</dd></div>
+            <div><dt>The tradeoff</dt><dd>I pushed back. Changing to blue meant breaking from our own color rules in one place, in exchange for users trusting what they saw. It took several weeks of working with UX to get there.</dd></div>
+          </dl>
+          <div class="lesson-pair">
+            <figure><img src="images/eplus-status-red.png" width="532" height="2170" loading="lazy" alt="Before: Eligibility+ status column with red lock and red check icons for responses that need attention"><figcaption><b>Before</b> Red reads as failure</figcaption></figure>
+            <figure><img src="images/eplus-status-blue.png" width="175" height="718" loading="lazy" alt="After: the same status column with blue lock and blue check icons for responses that need attention"><figcaption><b>After</b> Blue reads as attention</figcaption></figure>
+          </div>
+          <dl class="lesson">
+            <div><dt>What happened</dt><dd>After the change, the feedback turned around: "I like that I understand where I need to fix things." "It's easy to find the responses that need extra attention." Same feature, same results, a different icon color.</dd></div>
+            <div class="lesson-learned"><dt>What I learned</dt><dd>Design rules exist to serve users, and sometimes the user's reaction should win. Color carries emotion, and in a product people rely on to get paid, the difference between "error" and "needs attention" changes how much they trust it.</dd></div>
           </dl>
         </div>
       </li>
