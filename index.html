@@ -1047,6 +1047,7 @@
   .lesson .lesson-learned dt { color: var(--accent); }
   .lesson-group { margin: 40px 0 16px; font-family: var(--font-display); font-size: 22px; font-weight: 600; }
   .lesson-group:first-of-type { margin-top: 8px; }
+  .steps + .lesson-group { margin-top: 56px; }
   .lesson-kind { margin: 0 0 4px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
   .lesson-split { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 40px; align-items: start; max-width: 1040px; }
   .lesson-split .lesson { max-width: none; }
@@ -1482,7 +1483,7 @@
         <div class="nav-drop-panel" id="drop-cases" hidden>
           <a href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign<small>From a claims report to a billing workspace</small></a>
           <a href="#eligibility" data-view="eligibility">Eligibility+<small>Partnership with DentalXChange's EligibilityAI</small></a>
-          <a href="#lessons" data-view="lessons">Lessons and tradeoffs<small>Mistakes, compromises and what they changed</small></a>
+          <a href="#lessons" data-view="lessons">Tradeoffs and lessons<small>Compromises, mistakes and what they changed</small></a>
         </div>
       </div>
       <div class="nav-drop" role="listitem" data-pages="about hobbies">
@@ -1534,7 +1535,7 @@
           <p class="menu-label">Case studies</p>
           <a href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign<small>From a claims report to a billing workspace</small></a>
           <a href="#eligibility" data-view="eligibility">Eligibility+<small>Partnership with DentalXChange's EligibilityAI</small></a>
-          <a href="#lessons" data-view="lessons">Lessons and tradeoffs<small>Mistakes, compromises and what they changed</small></a>
+          <a href="#lessons" data-view="lessons">Tradeoffs and lessons<small>Compromises, mistakes and what they changed</small></a>
         </div>
       </div>
     </div>
@@ -2590,7 +2591,7 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
       <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
-      <a role="listitem" href="#lessons" data-view="lessons">Lessons and tradeoffs</a>
+      <a role="listitem" href="#lessons" data-view="lessons">Tradeoffs and lessons</a>
     </div>
     <div class="voices" aria-labelledby="voices-title">
       <h3 id="voices-title">What users are saying</h3>
@@ -2755,7 +2756,7 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
       <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
-      <a role="listitem" href="#lessons" data-view="lessons">Lessons and tradeoffs</a>
+      <a role="listitem" href="#lessons" data-view="lessons">Tradeoffs and lessons</a>
     </div>
 
     <div class="voices" aria-labelledby="voices2-title">
@@ -2933,7 +2934,7 @@
         <div class="decision"><dt>Answers before the patient arrives</dt><dd>Upfront clarity means no surprises at checkout, a faster check-in, and clear numbers that make it easier to say yes to same-day treatment.</dd></div>
       </dl>
     </div>
-    <a class="more-link" href="#lessons" data-view="lessons">Next: lessons and tradeoffs <span aria-hidden="true">→</span></a>
+    <a class="more-link" href="#lessons" data-view="lessons">Next: tradeoffs and lessons <span aria-hidden="true">→</span></a>
   </div>
 </section>
 </div>
@@ -2943,59 +2944,20 @@
   <div class="wrap">
     <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
     <div class="section-head">
-      <p class="eyebrow">Case studies · Lessons and tradeoffs</p>
-      <h2 id="lessons-title">Lessons and tradeoffs</h2>
-      <p>Not every release lands the way I planned. These are the mistakes and compromises that changed how I work, and what I do differently because of them.</p>
+      <p class="eyebrow">Case studies · Tradeoffs and lessons</p>
+      <h2 id="lessons-title">Tradeoffs and lessons</h2>
+      <p>Not every release lands the way I planned. These are the tradeoffs I made, the mistakes I learned from, and what I do differently because of them.</p>
     </div>
     <div class="subnav" role="list">
       <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
       <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
-      <a role="listitem" href="#lessons" data-view="lessons">Lessons and tradeoffs</a>
+      <a role="listitem" href="#lessons" data-view="lessons">Tradeoffs and lessons</a>
     </div>
-
-    <h3 class="lesson-group">Mistakes I learned from</h3>
-    <ol class="steps">
-      <li class="step">
-        <span class="step-num" aria-hidden="true">1</span>
-        <div class="step-body">
-          <h3>Small doesn't mean safe</h3>
-          <dl class="lesson">
-            <div><dt>The change</dt><dd>Payment reference numbers appeared on only some payment types. We expanded them to every payment type.</dd></div>
-            <div><dt>Why now</dt><dd>More than 100 suggestion tickets over 10 years had asked for it, and it laid the groundwork for an RCM payment reconciliation dashboard.</dd></div>
-            <div><dt>What happened</dt><dd>On the printed report, the new numbers filled the right margin, where many offices wrote their notes. Upset customers took to social media, and the feedback was harsh, far out of proportion to the size of the change.</dd></div>
-            <div class="lesson-learned"><dt>What I learned</dt><dd>Marketing and change management matter, even for the small things. A long-requested improvement can still disrupt a routine people rely on, so even small changes need a heads-up and a clear reason why.</dd></div>
-          </dl>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-num" aria-hidden="true">2</span>
-        <div class="step-body">
-          <h3>Third-party vendors can be unreliable narrators</h3>
-          <dl class="lesson">
-            <div><dt>What happened</dt><dd>In vendor conversations, we used the same words and assumed they meant the same things. A vendor would describe how something worked, I'd agree, and only later find out their definition was different from ours.</dd></div>
-            <div class="lesson-learned"><dt>What I learned</dt><dd>Verify, verify, verify. Shared words don't guarantee shared meaning. I follow through on what a partner tells me and ask for the data that proves it before it becomes a requirement.</dd></div>
-          </dl>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-num" aria-hidden="true">3</span>
-        <div class="step-body">
-          <h3>Trust, but verify</h3>
-          <dl class="lesson">
-            <div><dt>The request</dt><dd>A DSO asked for a specific feature. I met with their account manager and one of our VPs, who explained the problem and the requirements.</dd></div>
-            <div><dt>What happened</dt><dd>In beta, the DSO told us it missed the mark. Our solution solved the problem for 99% of users, but not for the DSO we built it for. We had to add a whole new set of functionality to the feature.</dd></div>
-            <div class="lesson-learned"><dt>What I learned</dt><dd>Go to the source. I should have met with the DSO directly to understand how they used this feature in their legacy software and what they expected. We could have built the full feature the first time, without the delay or the missed requirements.</dd></div>
-          </dl>
-        </div>
-      </li>
-    </ol>
 
     <h3 class="lesson-group">Tradeoffs I made</h3>
     <ol class="steps">
       <li class="step">
-        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-num" aria-hidden="true">1</span>
         <div class="step-body">
           <h3>Red followed the rules. Blue followed the user.</h3>
           <div class="lesson-split">
@@ -3015,7 +2977,7 @@
       </li>
 
       <li class="step">
-        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-num" aria-hidden="true">2</span>
         <div class="step-body">
           <h3>Two weeks late, months ahead</h3>
           <div class="lesson-split lesson-split-wide">
@@ -3033,6 +2995,45 @@
           </div>
         </div>
       </li>
+      </li>
+    </ol>
+
+    <h3 class="lesson-group">Mistakes I learned from</h3>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body">
+          <h3>Small doesn't mean safe</h3>
+          <dl class="lesson">
+            <div><dt>The change</dt><dd>Payment reference numbers appeared on only some payment types. We expanded them to every payment type.</dd></div>
+            <div><dt>Why now</dt><dd>More than 100 suggestion tickets over 10 years had asked for it, and it laid the groundwork for an RCM payment reconciliation dashboard.</dd></div>
+            <div><dt>What happened</dt><dd>On the printed report, the new numbers filled the right margin, where many offices wrote their notes. Upset customers took to social media, and the feedback was harsh, far out of proportion to the size of the change.</dd></div>
+            <div class="lesson-learned"><dt>What I learned</dt><dd>Marketing and change management matter, even for the small things. A long-requested improvement can still disrupt a routine people rely on, so even small changes need a heads-up and a clear reason why.</dd></div>
+          </dl>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <h3>Third-party vendors can be unreliable narrators</h3>
+          <dl class="lesson">
+            <div><dt>What happened</dt><dd>In vendor conversations, we used the same words and assumed they meant the same things. A vendor would describe how something worked, I'd agree, and only later find out their definition was different from ours.</dd></div>
+            <div class="lesson-learned"><dt>What I learned</dt><dd>Verify, verify, verify. Shared words don't guarantee shared meaning. I follow through on what a partner tells me and ask for the data that proves it before it becomes a requirement.</dd></div>
+          </dl>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <div class="step-body">
+          <h3>Trust, but verify</h3>
+          <dl class="lesson">
+            <div><dt>The request</dt><dd>A DSO asked for a specific feature. I met with their account manager and one of our VPs, who explained the problem and the requirements.</dd></div>
+            <div><dt>What happened</dt><dd>In beta, the DSO told us it missed the mark. Our solution solved the problem for 99% of users, but not for the DSO we built it for. We had to add a whole new set of functionality to the feature.</dd></div>
+            <div class="lesson-learned"><dt>What I learned</dt><dd>Go to the source. I should have met with the DSO directly to understand how they used this feature in their legacy software and what they expected. We could have built the full feature the first time, without the delay or the missed requirements.</dd></div>
+          </dl>
+        </div>
       </li>
     </ol>
 
@@ -3059,7 +3060,7 @@
         <li><a href="#lifecycle" data-view="lifecycle">RCM expertise</a></li>
         <li><a href="#claims-worklist" data-view="claims-worklist">Case study: Claims worklist</a></li>
         <li><a href="#eligibility" data-view="eligibility">Case study: Eligibility+</a></li>
-        <li><a href="#lessons" data-view="lessons">Lessons and tradeoffs</a></li>
+        <li><a href="#lessons" data-view="lessons">Tradeoffs and lessons</a></li>
         <li><a href="#about" data-view="about">Experience</a></li>
         <li><a href="#hobbies" data-view="hobbies">Outside of work</a></li>
       </ul>
