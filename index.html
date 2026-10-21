@@ -1078,7 +1078,8 @@
   @media (max-width: 420px) { .claim-pair figure { width: 250px; } .claim-pair figure:last-child { left: 30px; top: 170px; } .claim-pair { height: 420px; } }
   /* Philosophies */
   .philo-split { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; margin-top: 12px; }
-  @media (max-width: 860px) { .philo-split { grid-template-columns: minmax(0, 1fr); } }
+  .philo-left { grid-template-columns: 320px minmax(0, 1fr); }
+  @media (max-width: 860px) { .philo-split, .philo-left { grid-template-columns: minmax(0, 1fr); } .philo-left .philo-img { order: 1; } }
   .philo-img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
   /* AI ROI graphic */
   .roi-img { display: block; width: 100%; max-width: 760px; height: auto; margin: 20px 0 8px; border-radius: 14px; border: 1px solid var(--line); }
@@ -2574,7 +2575,12 @@
         <span class="step-num" aria-hidden="true">3</span>
         <div class="step-body">
           <h3>Don't make copies of copies</h3>
-          <p class="step-lede">Every copy of a copy loses a little detail. I take pride in everything I do, and I don't take shortcuts, whether it's a requirement, a prototype or a support reply.</p>
+          <div class="lesson-split philo-split philo-left">
+            <img class="philo-img" src="images/copies-of-copies.jpg" width="1200" height="800" loading="lazy" alt="Four botanical prints in a row labeled Original, Copy 1, Copy 2 and Copy 3, each fainter and less detailed than the last">
+            <div>
+              <p class="step-lede">Every copy of a copy loses a little detail. I take pride in everything I do, and I don't take shortcuts, whether it's a requirement, a prototype or a support reply.</p>
+            </div>
+          </div>
         </div>
       </li>
 
