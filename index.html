@@ -1048,28 +1048,33 @@
   .lesson-group { margin: 40px 0 16px; font-family: var(--font-display); font-size: 22px; font-weight: 600; }
   .lesson-group:first-of-type { margin-top: 8px; }
   .lesson-kind { margin: 0 0 4px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
-  .lesson-split { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: start; max-width: 1040px; }
+  .lesson-split { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 40px; align-items: start; max-width: 1040px; }
   .lesson-split .lesson { max-width: none; }
-  .lesson-pair { position: relative; height: 830px; margin-top: 12px; }
-  .lesson-pair figure { position: absolute; margin: 0; width: 160px; }
+  .lesson-pair { position: relative; height: 630px; margin-top: 12px; }
+  .lesson-pair figure { position: absolute; margin: 0; width: 128px; }
   .lesson-pair figure:first-child { left: 0; top: 0; transform: rotate(-3deg); z-index: 1; display: flex; flex-direction: column; }
-  .lesson-pair figure:first-child figcaption { order: -1; margin: 0 0 10px; }
-  .lesson-pair figure:last-child { left: 118px; top: 104px; transform: rotate(3deg); z-index: 2; }
+  .lesson-pair figure:first-child figcaption { order: -1; margin: 0 -48px 10px; }
+  .lesson-pair figure:last-child { left: 96px; top: 70px; transform: rotate(3deg); z-index: 2; }
   .lesson-pair img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 10px 24px rgba(19, 35, 43, 0.18); }
-  .lesson-pair figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); text-align: center; }
+  .lesson-pair figcaption { margin: 10px -48px 0; font-size: 14px; color: var(--muted); text-align: center; white-space: nowrap; }
   .lesson-pair figcaption b { display: block; font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
   @media (max-width: 860px) {
     .lesson-split { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-    .lesson-pair { width: 280px; max-width: 100%; height: 830px; }
+    .lesson-pair { width: 240px; max-width: 100%; height: 650px; }
   }
-  .claim-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 1040px; margin: 16px 0 12px; }
-  .claim-pair figure { margin: 0; min-width: 0; }
+  .lesson-split-wide { grid-template-columns: minmax(0, 1fr) 340px; }
+  .claim-pair { position: relative; height: 470px; margin-top: 12px; }
+  .claim-pair figure { position: absolute; margin: 0; width: 290px; }
+  .claim-pair figure:first-child { left: 0; top: 0; z-index: 1; transform: rotate(-2deg); display: flex; flex-direction: column; }
+  .claim-pair figure:first-child figcaption { order: -1; margin: 0 0 10px; }
+  .claim-pair figure:last-child { left: 46px; top: 190px; z-index: 2; transform: rotate(2deg); }
   .claim-shot { position: relative; }
-  .claim-pair img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+  .claim-pair img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 10px 24px rgba(19, 35, 43, 0.18); }
   .claim-ring { position: absolute; left: 74.2%; top: 66%; width: 23.2%; height: 8.6%; border: 2px solid var(--accent); border-radius: 999px; box-shadow: 0 0 0 3px var(--accent-soft); }
-  .claim-pair figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .claim-pair figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); text-align: center; }
   .claim-pair figcaption b { display: block; font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
-  @media (max-width: 560px) { .claim-pair { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 860px) { .lesson-split-wide { grid-template-columns: minmax(0, 1fr); } .claim-pair { width: 340px; max-width: 100%; } }
+  @media (max-width: 420px) { .claim-pair figure { width: 250px; } .claim-pair figure:last-child { left: 30px; top: 170px; } .claim-pair { height: 420px; } }
   /* AI ROI graphic */
   .roi-img { display: block; width: 100%; max-width: 760px; height: auto; margin: 20px 0 8px; border-radius: 14px; border: 1px solid var(--line); }
   .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
@@ -3013,19 +3018,19 @@
         <span class="step-num" aria-hidden="true">5</span>
         <div class="step-body">
           <h3>Two weeks late, months ahead</h3>
-          <dl class="lesson">
-            <div><dt>The starting point</dt><dd>We started the edit claims feature with well-defined requirements. Midway through, we learned it also needed to support the new billing screen, and our initial back end, components and UI didn't all work there.</dd></div>
-            <div><dt>The tradeoff</dt><dd>The developer and I went through the claim form one box at a time to decide whether each one supported both platforms or only RCM. We descoped anything that didn't support both and released the feature, so the new billing screen could pick up the UI. Then we iterated quickly, one box at a time, until the back end and components worked with both modules. It cost us two weeks on the original timeline.</dd></div>
-            <div><dt>For example</dt><dd>Adding an attachment only worked in RCM at first, so we released edit claims without the Add attachment button. Once it worked in both modules, we added it back.</dd></div>
-          </dl>
-          <div class="claim-pair">
-            <figure><img src="images/edit-claim-descoped.png" width="740" height="440" loading="lazy" alt="Edit claim screen as first released: the Attachments section has no Add attachment button"><figcaption><b>First release</b> Only what worked in both modules</figcaption></figure>
-            <figure><div class="claim-shot"><img src="images/edit-claim-add-attachment.png" width="740" height="440" loading="lazy" alt="The same edit claim screen with an Add attachment button in the Attachments section"><span class="claim-ring" aria-hidden="true"></span></div><figcaption><b>Next iteration</b> Add attachment, once it worked in both</figcaption></figure>
+          <div class="lesson-split lesson-split-wide">
+            <dl class="lesson">
+              <div><dt>The starting point</dt><dd>We started the edit claims feature with well-defined requirements. Midway through, we learned it also needed to support the new billing screen, and our initial back end, components and UI didn't all work there.</dd></div>
+              <div><dt>The tradeoff</dt><dd>The developer and I went through the claim form one box at a time to decide whether each one supported both platforms or only RCM. We descoped anything that didn't support both and released the feature, so the new billing screen could pick up the UI. Then we iterated quickly, one box at a time, until the back end and components worked with both modules. It cost us two weeks on the original timeline.</dd></div>
+              <div><dt>For example</dt><dd>Adding an attachment only worked in RCM at first, so we released edit claims without the Add attachment button. Once it worked in both modules, we added it back.</dd></div>
+              <div><dt>What happened</dt><dd>The team building the new billing screen didn't have to repeat the research, requirements, development and customer learning. Overall, it saved both teams months of work and got the feature in front of users quickly.</dd></div>
+              <div class="lesson-learned"><dt>What I learned</dt><dd>Sometimes a short delay is the faster path. Releasing what works everywhere and iterating from there beats building the same thing twice.</dd></div>
+            </dl>
+            <div class="claim-pair" aria-label="Before and after: the Attachments section of the edit claim screen">
+              <figure><img src="images/edit-claim-descoped.png" width="740" height="440" loading="lazy" alt="Edit claim screen as first released: the Attachments section has no Add attachment button"><figcaption><b>First release</b> Only what worked in both modules</figcaption></figure>
+              <figure><div class="claim-shot"><img src="images/edit-claim-add-attachment.png" width="740" height="440" loading="lazy" alt="The same edit claim screen with an Add attachment button in the Attachments section"><span class="claim-ring" aria-hidden="true"></span></div><figcaption><b>Next iteration</b> Add attachment, once it worked in both</figcaption></figure>
+            </div>
           </div>
-          <dl class="lesson">
-            <div><dt>What happened</dt><dd>The team building the new billing screen didn't have to repeat the research, requirements, development and customer learning. Overall, it saved both teams months of work and got the feature in front of users quickly.</dd></div>
-            <div class="lesson-learned"><dt>What I learned</dt><dd>Sometimes a short delay is the faster path. Releasing what works everywhere and iterating from there beats building the same thing twice.</dd></div>
-          </dl>
         </div>
       </li>
       </li>
