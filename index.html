@@ -1062,6 +1062,14 @@
     .lesson-split { grid-template-columns: minmax(0, 1fr); gap: 16px; }
     .lesson-pair { width: 280px; max-width: 100%; height: 830px; }
   }
+  .claim-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 1040px; margin: 16px 0 12px; }
+  .claim-pair figure { margin: 0; min-width: 0; }
+  .claim-shot { position: relative; }
+  .claim-pair img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+  .claim-ring { position: absolute; left: 74.2%; top: 66%; width: 23.2%; height: 8.6%; border: 2px solid var(--accent); border-radius: 999px; box-shadow: 0 0 0 3px var(--accent-soft); }
+  .claim-pair figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .claim-pair figcaption b { display: block; font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+  @media (max-width: 560px) { .claim-pair { grid-template-columns: minmax(0, 1fr); } }
   /* AI ROI graphic */
   .roi-img { display: block; width: 100%; max-width: 760px; height: auto; margin: 20px 0 8px; border-radius: 14px; border: 1px solid var(--line); }
   .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
@@ -3008,6 +3016,13 @@
           <dl class="lesson">
             <div><dt>The starting point</dt><dd>We started the edit claims feature with well-defined requirements. Midway through, we learned it also needed to support the new billing screen, and our initial back end, components and UI didn't all work there.</dd></div>
             <div><dt>The tradeoff</dt><dd>The developer and I went through the claim form one box at a time to decide whether each one supported both platforms or only RCM. We descoped anything that didn't support both and released the feature, so the new billing screen could pick up the UI. Then we iterated quickly, one box at a time, until the back end and components worked with both modules. It cost us two weeks on the original timeline.</dd></div>
+            <div><dt>For example</dt><dd>Adding an attachment only worked in RCM at first, so we released edit claims without the Add attachment button. Once it worked in both modules, we added it back.</dd></div>
+          </dl>
+          <div class="claim-pair">
+            <figure><img src="images/edit-claim-descoped.png" width="740" height="440" loading="lazy" alt="Edit claim screen as first released: the Attachments section has no Add attachment button"><figcaption><b>First release</b> Only what worked in both modules</figcaption></figure>
+            <figure><div class="claim-shot"><img src="images/edit-claim-add-attachment.png" width="740" height="440" loading="lazy" alt="The same edit claim screen with an Add attachment button in the Attachments section"><span class="claim-ring" aria-hidden="true"></span></div><figcaption><b>Next iteration</b> Add attachment, once it worked in both</figcaption></figure>
+          </div>
+          <dl class="lesson">
             <div><dt>What happened</dt><dd>The team building the new billing screen didn't have to repeat the research, requirements, development and customer learning. Overall, it saved both teams months of work and got the feature in front of users quickly.</dd></div>
             <div class="lesson-learned"><dt>What I learned</dt><dd>Sometimes a short delay is the faster path. Releasing what works everywhere and iterating from there beats building the same thing twice.</dd></div>
           </dl>
