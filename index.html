@@ -1076,6 +1076,10 @@
   .claim-pair figcaption b { display: block; font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
   @media (max-width: 860px) { .lesson-split-wide { grid-template-columns: minmax(0, 1fr); } .claim-pair { width: 340px; max-width: 100%; } }
   @media (max-width: 420px) { .claim-pair figure { width: 250px; } .claim-pair figure:last-child { left: 30px; top: 170px; } .claim-pair { height: 420px; } }
+  /* Philosophies */
+  .philo-split { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; margin-top: 12px; }
+  @media (max-width: 860px) { .philo-split { grid-template-columns: minmax(0, 1fr); } }
+  .philo-img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
   /* AI ROI graphic */
   .roi-img { display: block; width: 100%; max-width: 760px; height: auto; margin: 20px 0 8px; border-radius: 14px; border: 1px solid var(--line); }
   .biz-questions { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; }
@@ -1486,13 +1490,14 @@
           <a href="#lessons" data-view="lessons">Tradeoffs and lessons<small>Compromises, mistakes and what they changed</small></a>
         </div>
       </div>
-      <div class="nav-drop" role="listitem" data-pages="about hobbies">
+      <div class="nav-drop" role="listitem" data-pages="about philosophy hobbies">
         <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-about">
           About me
           <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="nav-drop-panel nav-drop-right" id="drop-about" hidden>
           <a href="#about" data-view="about">Experience<small>History, impact and education</small></a>
+          <a href="#philosophy" data-view="philosophy">My philosophies<small>The principles behind how I work</small></a>
           <a href="#hobbies" data-view="hobbies">Outside of work<small>Books, chickens, dogs and garden beds</small></a>
         </div>
       </div>
@@ -1516,6 +1521,7 @@
           <p class="menu-label">Overview</p>
           <a href="#" data-view="home">Home<small>Experience, specialty and contact</small></a>
           <a href="#about" data-view="about">About me: Experience<small>History, impact and education</small></a>
+          <a href="#philosophy" data-view="philosophy">About me: My philosophies<small>The principles behind how I work</small></a>
           <a href="#hobbies" data-view="hobbies">About me: Outside of work<small>Books, chickens, dogs and garden beds</small></a>
         </div>
         <div class="menu-group">
@@ -2424,6 +2430,7 @@
 
     <div class="subnav" role="list">
       <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
       <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
     </div>
 
@@ -2515,6 +2522,69 @@
         </div>
       </aside>
     </div>
+    <a class="more-link" href="#philosophy" data-view="philosophy">Next: My philosophies <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-philosophy" data-page="philosophy" hidden>
+<section class="case approach-page" aria-labelledby="philosophy-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">About me · My philosophies</p>
+      <h2 id="philosophy-title">My philosophies</h2>
+      <p>The principles behind how I work, from the first question in discovery to the last detail before release.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
+      <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <div class="step-body">
+          <h3>Curiouser and curiouser</h3>
+          <div class="lesson-split philo-split">
+            <div>
+              <p class="step-lede">Curiosity is where good product work starts. Every answer leads to a better question, and I'm happy to follow it down the rabbit hole until I understand not just what users do, but why they do it.</p>
+            </div>
+            <img class="philo-img" src="images/curiouser.jpg" width="1200" height="800" loading="lazy" alt="A weathered wooden signpost reading Curiouser and Curiouser, surrounded by a top hat, a pocket watch, a teacup and old books">
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <div class="step-body">
+          <h3>There's no such thing as asked and answered</h3>
+          <p class="step-lede">Ask again until you feel good about the answer. A question that's already been answered still deserves another look when the answer doesn't sit right, the context has changed, or someone new is in the room.</p>
+          <div class="subpoint">
+            <h4>Resolve the objection before it becomes an objection</h4>
+            <p>Think ahead. My least favorite advice is "don't borrow trouble." Of course I assume problems: that's how you de-risk a product. Finding the problem in a conversation is far cheaper than finding it in a support ticket.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <div class="step-body">
+          <h3>Don't make copies of copies</h3>
+          <p class="step-lede">Every copy of a copy loses a little detail. I take pride in everything I do, and I don't take shortcuts, whether it's a requirement, a prototype or a support reply.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <div class="step-body">
+          <h3>Empathy over expectation</h3>
+          <p class="step-lede">Every practice runs differently: a different service mix, provider mix and collection policy. Consultants bring good ideas, but they're ideas, not rules. I build products that practices can comfortably shape to fit their needs, instead of always being told what to do.</p>
+        </div>
+      </li>
+    </ol>
+
     <a class="more-link" href="#hobbies" data-view="hobbies">Next: Outside of work <span aria-hidden="true">→</span></a>
   </div>
 </section>
@@ -2531,6 +2601,7 @@
     </div>
     <div class="subnav" role="list">
       <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
       <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
     </div>
 
@@ -3062,6 +3133,7 @@
         <li><a href="#eligibility" data-view="eligibility">Case study: Eligibility+</a></li>
         <li><a href="#lessons" data-view="lessons">Tradeoffs and lessons</a></li>
         <li><a href="#about" data-view="about">Experience</a></li>
+        <li><a href="#philosophy" data-view="philosophy">My philosophies</a></li>
         <li><a href="#hobbies" data-view="hobbies">Outside of work</a></li>
       </ul>
     </div>
