@@ -3020,15 +3020,15 @@
           <h3>Two weeks late, months ahead</h3>
           <div class="lesson-split lesson-split-wide">
             <dl class="lesson">
-              <div><dt>The starting point</dt><dd>We started the edit claims feature with well-defined requirements. Midway through, we learned it also needed to support the new billing screen, and our initial back end, components and UI didn't all work there.</dd></div>
-              <div><dt>The tradeoff</dt><dd>The developer and I went through the claim form one box at a time to decide whether each one supported both platforms or only RCM. We descoped anything that didn't support both and released the feature, so the new billing screen could pick up the UI. Then we iterated quickly, one box at a time, until the back end and components worked with both modules. It cost us two weeks on the original timeline.</dd></div>
-              <div><dt>For example</dt><dd>Adding an attachment only worked in RCM at first, so we released edit claims without the Add attachment button. Once it worked in both modules, we added it back.</dd></div>
+              <div><dt>The starting point</dt><dd>We started the edit claims feature with well-defined requirements. Midway through development, we learned it also needed to support the new billing screen, and our initial back end, components and UI didn't all work there.</dd></div>
+              <div><dt>The tradeoff</dt><dd>Before beta, the developer and I went through the claim form one box at a time to decide whether each one supported both platforms or only RCM. We descoped anything that didn't support both, so the new billing screen could pick up the same UI. We delayed the launch by two weeks to adjust for the needs of both teams. After beta, we iterated quickly, one box at a time, until the back end and components worked with both modules.</dd></div>
+              <div><dt>For example</dt><dd>Add attachment was in the plan, but it only worked in RCM. We pulled it before beta and added it back once it worked in both modules.</dd></div>
               <div><dt>What happened</dt><dd>The team building the new billing screen didn't have to repeat the research, requirements, development and customer learning. Overall, it saved both teams months of work and got the feature in front of users quickly.</dd></div>
               <div class="lesson-learned"><dt>What I learned</dt><dd>Sometimes a short delay is the faster path. Releasing what works everywhere and iterating from there beats building the same thing twice.</dd></div>
             </dl>
-            <div class="claim-pair" aria-label="Before and after: the Attachments section of the edit claim screen">
-              <figure><img src="images/edit-claim-descoped.png" width="740" height="440" loading="lazy" alt="Edit claim screen as first released: the Attachments section has no Add attachment button"><figcaption><b>First release</b> Only what worked in both modules</figcaption></figure>
-              <figure><div class="claim-shot"><img src="images/edit-claim-add-attachment.png" width="740" height="440" loading="lazy" alt="The same edit claim screen with an Add attachment button in the Attachments section"><span class="claim-ring" aria-hidden="true"></span></div><figcaption><b>Next iteration</b> Add attachment, once it worked in both</figcaption></figure>
+            <div class="claim-pair" aria-label="The plan versus what went to beta: the Attachments section of the edit claim screen">
+              <figure><div class="claim-shot"><img src="images/edit-claim-add-attachment.png" width="740" height="440" loading="lazy" alt="The planned edit claim screen, with an Add attachment button in the Attachments section"><span class="claim-ring" aria-hidden="true"></span></div><figcaption><b>The plan</b> Full scope, including Add attachment</figcaption></figure>
+              <figure><img src="images/edit-claim-descoped.png" width="740" height="440" loading="lazy" alt="The edit claim screen at beta: the Attachments section without the Add attachment button"><figcaption><b>At beta</b> Only what worked in both modules</figcaption></figure>
             </div>
           </div>
         </div>
