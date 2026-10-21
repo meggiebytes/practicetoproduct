@@ -1045,6 +1045,8 @@
   .lesson dd { margin: 0; text-wrap: pretty; }
   .lesson .lesson-learned { background: var(--accent-soft); border-radius: 8px; padding: 14px 16px; }
   .lesson .lesson-learned dt { color: var(--accent); }
+  .lesson-group { margin: 40px 0 16px; font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+  .lesson-group:first-of-type { margin-top: 8px; }
   .lesson-kind { margin: 0 0 4px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
   .lesson-split { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: start; max-width: 1040px; }
   .lesson-split .lesson { max-width: none; }
@@ -1467,7 +1469,7 @@
         <div class="nav-drop-panel" id="drop-cases" hidden>
           <a href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign<small>From a claims report to a billing workspace</small></a>
           <a href="#eligibility" data-view="eligibility">Eligibility+<small>Partnership with DentalXChange's EligibilityAI</small></a>
-          <a href="#lessons" data-view="lessons">Lessons learned<small>Mistakes, tradeoffs and what they changed</small></a>
+          <a href="#lessons" data-view="lessons">Lessons and tradeoffs<small>Mistakes, compromises and what they changed</small></a>
         </div>
       </div>
       <div class="nav-drop" role="listitem" data-pages="about hobbies">
@@ -1519,7 +1521,7 @@
           <p class="menu-label">Case studies</p>
           <a href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign<small>From a claims report to a billing workspace</small></a>
           <a href="#eligibility" data-view="eligibility">Eligibility+<small>Partnership with DentalXChange's EligibilityAI</small></a>
-          <a href="#lessons" data-view="lessons">Lessons learned<small>Mistakes, tradeoffs and what they changed</small></a>
+          <a href="#lessons" data-view="lessons">Lessons and tradeoffs<small>Mistakes, compromises and what they changed</small></a>
         </div>
       </div>
     </div>
@@ -2575,7 +2577,7 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
       <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
-      <a role="listitem" href="#lessons" data-view="lessons">Lessons learned</a>
+      <a role="listitem" href="#lessons" data-view="lessons">Lessons and tradeoffs</a>
     </div>
     <div class="voices" aria-labelledby="voices-title">
       <h3 id="voices-title">What users are saying</h3>
@@ -2740,7 +2742,7 @@
     <div class="subnav" role="list">
       <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
       <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
-      <a role="listitem" href="#lessons" data-view="lessons">Lessons learned</a>
+      <a role="listitem" href="#lessons" data-view="lessons">Lessons and tradeoffs</a>
     </div>
 
     <div class="voices" aria-labelledby="voices2-title">
@@ -2918,7 +2920,7 @@
         <div class="decision"><dt>Answers before the patient arrives</dt><dd>Upfront clarity means no surprises at checkout, a faster check-in, and clear numbers that make it easier to say yes to same-day treatment.</dd></div>
       </dl>
     </div>
-    <a class="more-link" href="#lessons" data-view="lessons">Next: lessons learned <span aria-hidden="true">→</span></a>
+    <a class="more-link" href="#lessons" data-view="lessons">Next: lessons and tradeoffs <span aria-hidden="true">→</span></a>
   </div>
 </section>
 </div>
@@ -2928,16 +2930,17 @@
   <div class="wrap">
     <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
     <div class="section-head">
-      <p class="eyebrow">Case studies · Lessons learned</p>
-      <h2 id="lessons-title">Lessons learned</h2>
+      <p class="eyebrow">Case studies · Lessons and tradeoffs</p>
+      <h2 id="lessons-title">Lessons and tradeoffs</h2>
       <p>Not every release lands the way I planned. These are the mistakes and compromises that changed how I work, and what I do differently because of them.</p>
     </div>
     <div class="subnav" role="list">
       <a role="listitem" href="#claims-worklist" data-view="claims-worklist">Claims worklist redesign</a>
       <a role="listitem" href="#eligibility" data-view="eligibility">Eligibility+</a>
-      <a role="listitem" href="#lessons" data-view="lessons">Lessons learned</a>
+      <a role="listitem" href="#lessons" data-view="lessons">Lessons and tradeoffs</a>
     </div>
 
+    <h3 class="lesson-group">Mistakes I learned from</h3>
     <ol class="steps">
       <li class="step">
         <span class="step-num" aria-hidden="true">1</span>
@@ -2974,11 +2977,13 @@
           </dl>
         </div>
       </li>
+    </ol>
 
+    <h3 class="lesson-group">Tradeoffs I made</h3>
+    <ol class="steps">
       <li class="step">
         <span class="step-num" aria-hidden="true">4</span>
         <div class="step-body">
-          <p class="lesson-kind">Tradeoff</p>
           <h3>Red followed the rules. Blue followed the user.</h3>
           <div class="lesson-split">
             <dl class="lesson">
@@ -2994,6 +2999,20 @@
             </div>
           </div>
         </div>
+      </li>
+
+      <li class="step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <div class="step-body">
+          <h3>Two weeks late, months ahead</h3>
+          <dl class="lesson">
+            <div><dt>The starting point</dt><dd>We started the edit claims feature with well-defined requirements. Midway through, we learned it also needed to support the new billing screen, and our initial back end, components and UI didn't all work there.</dd></div>
+            <div><dt>The tradeoff</dt><dd>The developer and I went through the claim form one box at a time to decide whether each one supported both platforms or only RCM. We descoped anything that didn't support both and released the feature, so the new billing screen could pick up the UI. Then we iterated quickly, one box at a time, until the back end and components worked with both modules. It cost us two weeks on the original timeline.</dd></div>
+            <div><dt>What happened</dt><dd>The team building the new billing screen didn't have to repeat the research, requirements, development and customer learning. Overall, it saved both teams months of work and got the feature in front of users quickly.</dd></div>
+            <div class="lesson-learned"><dt>What I learned</dt><dd>Sometimes a short delay is the faster path. Releasing what works everywhere and iterating from there beats building the same thing twice.</dd></div>
+          </dl>
+        </div>
+      </li>
       </li>
     </ol>
 
@@ -3020,7 +3039,7 @@
         <li><a href="#lifecycle" data-view="lifecycle">RCM expertise</a></li>
         <li><a href="#claims-worklist" data-view="claims-worklist">Case study: Claims worklist</a></li>
         <li><a href="#eligibility" data-view="eligibility">Case study: Eligibility+</a></li>
-        <li><a href="#lessons" data-view="lessons">Lessons learned</a></li>
+        <li><a href="#lessons" data-view="lessons">Lessons and tradeoffs</a></li>
         <li><a href="#about" data-view="about">Experience</a></li>
         <li><a href="#hobbies" data-view="hobbies">Outside of work</a></li>
       </ul>
