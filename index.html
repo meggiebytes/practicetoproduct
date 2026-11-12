@@ -1094,6 +1094,15 @@
   .ref-letter-body p { margin: 0 0 14px; text-wrap: pretty; }
   .ref-sign { color: var(--muted); }
   @media (max-width: 760px) { .ref-highlights { grid-template-columns: minmax(0, 1fr); } }
+  .team-refs { max-width: 860px; margin-top: clamp(40px, 5vw, 56px); }
+  .team-refs h3 { margin: 0 0 6px; font-size: 22px; }
+  .team-refs .ref-pull figcaption { margin-top: 10px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .team-quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+  .team-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  @media (max-width: 760px) { .team-quotes { grid-template-columns: minmax(0, 1fr); } }
+  .team-quote { margin: 0; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+  .team-quote blockquote { margin: 0 0 10px; text-wrap: pretty; }
+  .team-quote figcaption { font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
   /* Philosophies */
   .philo-split { grid-template-columns: minmax(0, 360px) 340px; gap: 32px; justify-content: start; align-items: start; margin-top: 12px; }
   .philo-left { grid-template-columns: 340px minmax(0, 360px); }
@@ -2602,6 +2611,52 @@
         </div>
       </details>
     </article>
+
+    <section class="team-refs" aria-labelledby="team-refs-title">
+      <h3 id="team-refs-title">From my current team</h3>
+      <p class="voices-note">Excerpts from anonymous feedback my developers and QA submitted to management for my annual review.</p>
+      <figure class="ref-pull">
+        <blockquote>“Meg, your joining the team was a real game changer.”</blockquote>
+        <figcaption>Current developer coworker</figcaption>
+      </figure>
+      <div class="team-quotes">
+        <div class="team-col">
+          <figure class="team-quote">
+            <span class="ref-tag">The why</span>
+            <blockquote>“You don’t just say ‘Can you build X’ … but you give us the ‘… because …’ too and that is important. Knowing the why and how of what we are building informs how we architect, implement and maintain the product.”</blockquote>
+            <blockquote>“You never make us feel like we’ve asked a dumb question.”</blockquote>
+            <figcaption>Current Developer coworker</figcaption>
+          </figure>
+          <figure class="team-quote">
+            <span class="ref-tag">Planning</span>
+            <blockquote>“I really appreciate how clearly the work is planned. I usually know what I’ll be working on next week, in two weeks, and often even in the next sprint or two.”</blockquote>
+            <blockquote>“Even though my English isn’t perfect, it never prevents me from understanding you or expressing myself.”</blockquote>
+            <figcaption>Current Developer coworker</figcaption>
+          </figure>
+          <figure class="team-quote">
+            <span class="ref-tag">Team morale</span>
+            <blockquote>“You’re a good shield for us and I never feel pressure from you or from higher management.”</blockquote>
+            <blockquote>“Your strong morale keeps spirits high and productivity flowing.”</blockquote>
+            <figcaption>Current Developer coworker</figcaption>
+          </figure>
+        </div>
+        <div class="team-col">
+          <figure class="team-quote">
+            <span class="ref-tag">Pragmatism</span>
+            <blockquote>“You are confident and decisive in making quick decisions that strike the balance between fast product delivery and ‘nice-to-have’ features.”</blockquote>
+            <blockquote>“We never have to wait long for answers to questions, whether about the overall insurance picture, or the small details of a card we’re working on.”</blockquote>
+            <blockquote>“You inspire confidence and motivation in the team with your constant support and friendly (and funny!) personality.”</blockquote>
+            <figcaption>Current Developer coworker</figcaption>
+          </figure>
+          <figure class="team-quote">
+            <span class="ref-tag">Delivery</span>
+            <blockquote>“You guided the Eligibility+ effort and similar projects from a tangled set of requirements to a reliable, high customer demand release, showing excellent scope control and delivery quality.”</blockquote>
+            <blockquote>“The team consistently notes your easy, professional cooperation and the reliability you bring to every project.”</blockquote>
+            <figcaption>Current QA coworker</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
     <a class="more-link" href="#philosophy" data-view="philosophy">Next: My philosophies <span aria-hidden="true">→</span></a>
   </div>
