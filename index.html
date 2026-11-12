@@ -1076,6 +1076,24 @@
   .claim-pair figcaption b { display: block; font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
   @media (max-width: 860px) { .lesson-split-wide { grid-template-columns: minmax(0, 1fr); } .claim-pair { width: 340px; max-width: 100%; } }
   @media (max-width: 420px) { .claim-pair figure { width: 250px; } .claim-pair figure:last-child { left: 30px; top: 170px; } .claim-pair { height: 420px; } }
+  /* References */
+  .ref { max-width: 860px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(20px, 3vw, 32px); }
+  .ref-head { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; align-items: center; margin-bottom: 20px; }
+  .ref-avatar { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: #fff; font: 600 18px/1 var(--font-display); }
+  .ref .ref-head h3 { margin: 0 0 4px; font-size: 22px; }
+  .ref .ref-head p { margin: 0; font-size: 14px; color: var(--muted); }
+  .ref-head .ref-rel { margin-top: 2px; }
+  .ref-pull { margin: 0 0 20px; padding: clamp(20px, 3vw, 28px); background: var(--accent-soft); border-radius: 8px; }
+  .ref-pull blockquote { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; text-wrap: pretty; }
+  .ref-highlights { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .ref-highlights li { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 8px; text-wrap: pretty; }
+  .ref-tag { display: block; margin-bottom: 8px; font: 500 12px/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .ref-letter { border-top: 1px solid var(--line); padding-top: 16px; }
+  .ref-letter summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+  .ref-letter-body { max-width: 68ch; margin-top: 16px; }
+  .ref-letter-body p { margin: 0 0 14px; text-wrap: pretty; }
+  .ref-sign { color: var(--muted); }
+  @media (max-width: 760px) { .ref-highlights { grid-template-columns: minmax(0, 1fr); } }
   /* Philosophies */
   .philo-split { grid-template-columns: minmax(0, 360px) 340px; gap: 32px; justify-content: start; align-items: start; margin-top: 12px; }
   .philo-left { grid-template-columns: 340px minmax(0, 360px); }
@@ -1491,13 +1509,14 @@
           <a href="#lessons" data-view="lessons">Tradeoffs and lessons<small>Compromises, mistakes and what they changed</small></a>
         </div>
       </div>
-      <div class="nav-drop" role="listitem" data-pages="about philosophy hobbies">
+      <div class="nav-drop" role="listitem" data-pages="about references philosophy hobbies">
         <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="drop-about">
           About me
           <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="nav-drop-panel nav-drop-right" id="drop-about" hidden>
           <a href="#about" data-view="about">Experience<small>History, impact and education</small></a>
+          <a href="#references" data-view="references">References<small>What colleagues say about working with me</small></a>
           <a href="#philosophy" data-view="philosophy">My philosophies<small>The principles behind how I work</small></a>
           <a href="#hobbies" data-view="hobbies">Outside of work<small>Books, chickens, dogs and garden beds</small></a>
         </div>
@@ -1522,6 +1541,7 @@
           <p class="menu-label">Overview</p>
           <a href="#" data-view="home">Home<small>Experience, specialty and contact</small></a>
           <a href="#about" data-view="about">About me: Experience<small>History, impact and education</small></a>
+          <a href="#references" data-view="references">About me: References<small>What colleagues say about working with me</small></a>
           <a href="#philosophy" data-view="philosophy">About me: My philosophies<small>The principles behind how I work</small></a>
           <a href="#hobbies" data-view="hobbies">About me: Outside of work<small>Books, chickens, dogs and garden beds</small></a>
         </div>
@@ -2431,6 +2451,7 @@
 
     <div class="subnav" role="list">
       <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#references" data-view="references">References</a>
       <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
       <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
     </div>
@@ -2525,6 +2546,63 @@
         </div>
       </aside>
     </div>
+    <a class="more-link" href="#references" data-view="references">Next: References <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</div>
+
+<div id="view-references" data-page="references" hidden>
+<section class="case about-page" aria-labelledby="references-title">
+  <div class="wrap">
+    <a class="back" href="#" data-view="home"><span aria-hidden="true">←</span> Back to home</a>
+    <div class="section-head">
+      <p class="eyebrow">About me · References</p>
+      <h2 id="references-title">References</h2>
+      <p>What the people I've worked with say about working with me, in their own words.</p>
+    </div>
+    <div class="subnav" role="list">
+      <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#references" data-view="references">References</a>
+      <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
+      <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
+    </div>
+
+    <article class="ref" aria-labelledby="ref-yuliia">
+      <header class="ref-head">
+        <span class="ref-avatar" aria-hidden="true">YS</span>
+        <div>
+          <h3 id="ref-yuliia">Yuliia Shakhno</h3>
+          <p>UX / Product Designer · Former UX Designer at Curve Dental</p>
+          <p class="ref-rel">Worked with me on the insurance team, where I was Product Owner</p>
+        </div>
+      </header>
+      <figure class="ref-pull">
+        <blockquote>“Working with her was one of the most valuable and positive experiences of my professional career.”</blockquote>
+      </figure>
+      <ul class="ref-highlights">
+        <li><span class="ref-tag">Collaboration</span>“She wasn’t afraid to challenge an idea or ask difficult questions when she believed we could achieve a better outcome.”</li>
+        <li><span class="ref-tag">Growth</span>“Working with her helped me become a stronger and more confident designer.”</li>
+        <li><span class="ref-tag">Leadership</span>“The way she combines expertise, empathy, accountability, and leadership.”</li>
+      </ul>
+      <details class="ref-letter">
+        <summary>Read the full letter</summary>
+        <div class="ref-letter-body">
+          <p>I had the pleasure of working with Megan during my time as a UX Designer at Curve Dental, where she was the Product Owner of our insurance team. Looking back, I can confidently say that working with her was one of the most valuable and positive experiences of my professional career.</p>
+          <p>What I appreciated most about Megan was how genuinely invested she was in both the product and the people working on it. She didn’t simply focus on delivering features or meeting deadlines. She cared deeply about the quality of our work, the decisions we made, and the overall success of the product.</p>
+          <p>We worked closely together and had regular weekly meetings, which I always found incredibly valuable. Our conversations went far beyond discussing requirements or reviewing progress. We exchanged ideas, challenged assumptions, explored different solutions, and sometimes had different opinions. Megan always made space for open discussions and genuinely listened to my perspective as a designer. At the same time, she wasn’t afraid to challenge an idea or ask difficult questions when she believed we could achieve a better outcome.</p>
+          <p>One of the things I valued most was her approach to supporting and developing people. Megan was always encouraging and approachable, but she also understood the importance of honest, constructive feedback. She could recognise when I needed additional support, but also when I could push myself further or approach something differently. Her feedback always felt thoughtful and motivating, and I genuinely believe that working with her helped me become a stronger and more confident designer.</p>
+          <p>Megan also has an exceptional understanding of her field. Working on complex insurance-related functionality often required a deep understanding of business processes and requirements. Whenever I needed clarification or additional context, she was incredibly patient and generous with her knowledge. She always took the time to explain things clearly and helped me understand not only what we needed to achieve, but why it mattered.</p>
+          <p>I also really admired her curiosity and willingness to learn. She showed genuine interest in understanding how different team members approached their work, including my UX design process. Rather than limiting herself to her own area of expertise, she was always open to new perspectives and opportunities to learn from others.</p>
+          <p>Another quality that really stood out was her sense of responsibility. Megan genuinely cared about the projects she was leading and was always willing to invest her time and energy in helping the team succeed. Even when things became challenging, she remained engaged, approachable, and focused on finding solutions.</p>
+          <p>Above all, I admired her leadership. She knew how to guide the team while making everyone feel heard, respected, and involved. She created an environment where I felt comfortable sharing ideas, asking questions, and challenging decisions. Despite our different responsibilities, I always felt that we were working towards the same goal, with mutual trust and a shared commitment to doing our best work.</p>
+          <p>What makes Megan exceptional is not just her knowledge or professional experience, but the way she combines expertise, empathy, accountability, and leadership. She genuinely cares about the people she works with and has a remarkable ability to bring out the best in them.</p>
+          <p>I feel very fortunate to have had the opportunity to work with her. She has made a lasting positive impact on my professional development, and I would welcome the opportunity to work with her again.</p>
+          <p>I would wholeheartedly recommend Megan to any organization looking for a dedicated, thoughtful, and highly capable professional who can lead, collaborate, and make a meaningful difference.</p>
+          <p class="ref-sign">Yuliia Shakhno<br>UX / Product Designer<br>Former UX Designer at Curve Dental</p>
+        </div>
+      </details>
+    </article>
+
     <a class="more-link" href="#philosophy" data-view="philosophy">Next: My philosophies <span aria-hidden="true">→</span></a>
   </div>
 </section>
@@ -2541,6 +2619,7 @@
     </div>
     <div class="subnav" role="list">
       <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#references" data-view="references">References</a>
       <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
       <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
     </div>
@@ -2609,6 +2688,7 @@
     </div>
     <div class="subnav" role="list">
       <a role="listitem" href="#about" data-view="about">Experience</a>
+      <a role="listitem" href="#references" data-view="references">References</a>
       <a role="listitem" href="#philosophy" data-view="philosophy">My philosophies</a>
       <a role="listitem" href="#hobbies" data-view="hobbies">Outside of work</a>
     </div>
@@ -3141,6 +3221,7 @@
         <li><a href="#eligibility" data-view="eligibility">Case study: Eligibility+</a></li>
         <li><a href="#lessons" data-view="lessons">Tradeoffs and lessons</a></li>
         <li><a href="#about" data-view="about">Experience</a></li>
+        <li><a href="#references" data-view="references">References</a></li>
         <li><a href="#philosophy" data-view="philosophy">My philosophies</a></li>
         <li><a href="#hobbies" data-view="hobbies">Outside of work</a></li>
       </ul>
